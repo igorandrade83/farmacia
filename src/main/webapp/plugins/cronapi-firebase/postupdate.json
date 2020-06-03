@@ -1,0 +1,14 @@
+{
+    "includes": [
+	{
+      "file": "index.html",
+      "script": "https://www.gstatic.com/firebasejs/4.9.0/firebase.js",
+      "type": "script"
+    },
+    {
+      "file": "index.html",
+      "script": "plugins/cronapi-firebase/firebase.cronapi.js",
+      "type": "script"
+    }
+	]
+}

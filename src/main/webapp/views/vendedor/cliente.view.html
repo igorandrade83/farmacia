@@ -1,0 +1,154 @@
+<div id="starter" ng-init="" ng-destroy="" data-component="crn-start" screen-params="" primary-datasource="Cliente">
+<h1 class="component-holder text-left h3 title" xattr-position="text-left" xattr-type="h3" data-component="crn-text-component" id="crn-text-component-68958">Cliente</h1>
+
+<datasource data-component="crn-datasource" filter="" name="Cliente" entity="farmacia.Cliente" keys="_objectKey" rows-per-page="100" class="" schema="[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;cpf&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;telefone&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;email&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;cep&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;endereco&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;complemento&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;bairro&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;cidade&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;uf&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true}]" condition="{&quot;maxRecord&quot;:100,&quot;params&quot;:[],&quot;expression&quot;:{&quot;type&quot;:&quot;OR&quot;,&quot;args&quot;:[{&quot;type&quot;:&quot;%&quot;,&quot;left&quot;:&quot;nome&quot;,&quot;right&quot;:&quot;{{vars.search|raw}}&quot;,&quot;args&quot;:[]}]}}" lazy="true" parameters="" dependent-lazy-post="" checkrequired=""></datasource>
+
+        <div role="search" ng-hide="Cliente.inserting || Cliente.editing" data-component="crn-textinput" id="crn-datasource-filter-general68958" class="">
+            <div class="form-group">
+                <label for="textinput-filter" class="">{{"template.crud.search" | translate}}</label>
+                <input type="text" ng-model="vars.search" id="textinput-filter" class="form-control k-textbox" value="" placeholder="{{'template.crud.search' | translate}}">
+            </div>
+        </div>
+
+<section ng-hide="Cliente.editing || Cliente.inserting" class="component-holder ng-binding ng-scope" data-component="crn-cron-grid" id="cron-crn-grid-search">
+    <cron-grid options="{&quot;dataSourceScreen&quot;:{&quot;name&quot;:&quot;Cliente&quot;,&quot;entity&quot;:&quot;famarcia.Cliente&quot;,&quot;entityDataSource&quot;:{&quot;id&quot;:&quot;famarcia.Cliente&quot;,&quot;customId&quot;:&quot;Cliente&quot;,&quot;name&quot;:&quot;Cliente&quot;,&quot;customQueryName&quot;:&quot;famarcia.Cliente&quot;,&quot;paramValues&quot;:[],&quot;entityFullName&quot;:&quot;famarcia.entity.Cliente&quot;,&quot;schemaFields&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;cpf&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;telefone&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;email&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;cep&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;endereco&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;complemento&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;bairro&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;cidade&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;uf&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true}],&quot;type&quot;:&quot;entity&quot;},&quot;keys&quot;:&quot;_objectKey&quot;,&quot;rowsPerPage&quot;:&quot;100&quot;,&quot;schema&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;cpf&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;telefone&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;email&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;cep&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;endereco&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;complemento&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;bairro&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;cidade&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;uf&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true}],&quot;parameters&quot;:&quot;&quot;,&quot;condition&quot;:&quot;{\&quot;maxRecord\&quot;:100,\&quot;params\&quot;:[],\&quot;expression\&quot;:{\&quot;type\&quot;:\&quot;OR\&quot;,\&quot;args\&quot;:[{\&quot;type\&quot;:\&quot;%\&quot;,\&quot;left\&quot;:\&quot;nome\&quot;,\&quot;right\&quot;:\&quot;{{vars.search|raw}}\&quot;,\&quot;args\&quot;:[]}]}}&quot;,&quot;dependentLazyPost&quot;:&quot;&quot;,&quot;lazy&quot;:&quot;true&quot;,&quot;checkrequired&quot;:&quot;&quot;,&quot;onBeforeCreate&quot;:&quot;&quot;,&quot;onAfterCreate&quot;:&quot;&quot;,&quot;onBeforeUpdate&quot;:&quot;&quot;,&quot;onAfterUpdate&quot;:&quot;&quot;,&quot;onBeforeDelete&quot;:&quot;&quot;,&quot;onAfterDelete&quot;:&quot;&quot;,&quot;onAfterFill&quot;:&quot;&quot;,&quot;dataComponent&quot;:&quot;crn-datasource&quot;,&quot;id&quot;:&quot;&quot;,&quot;oldName&quot;:&quot;&quot;},&quot;allowPaging&quot;:true,&quot;allowSorting&quot;:true,&quot;allowGrouping&quot;:false,&quot;allowSelectionTotalPageToShow&quot;:true,&quot;allowRefreshGrid&quot;:true,&quot;allowSelectionRow&quot;:true,&quot;batchMode&quot;:true,&quot;hideModalButtons&quot;:true,&quot;editable&quot;:&quot;datasource&quot;,&quot;pathView&quot;:&quot;src/main/webapp/views/logged/cliente.view.html&quot;,&quot;modelGrid&quot;:&quot;custom&quot;,&quot;columns&quot;:[{&quot;dataType&quot;:&quot;Database&quot;,&quot;field&quot;:&quot;nome&quot;,&quot;headerText&quot;:&quot;Nome do cliente&quot;,&quot;type&quot;:&quot;string&quot;,&quot;sortable&quot;:true,&quot;filterable&quot;:true,&quot;format&quot;:&quot;&quot;,&quot;visible&quot;:true,&quot;visibleCrud&quot;:true,&quot;linkParentType&quot;:&quot;screen&quot;,&quot;linkParentLoadIfEmpty&quot;:false,&quot;required&quot;:false,&quot;inputType&quot;:&quot;default&quot;,&quot;comboboxOptions&quot;:{&quot;staticDataSource&quot;:[],&quot;filterKeyValues&quot;:{&quot;&quot;:&quot;&quot;,&quot;contains&quot;:&quot;Contendo&quot;,&quot;startswith&quot;:&quot;Iniciando com&quot;,&quot;endswith&quot;:&quot;Final com&quot;},&quot;customTemplate&quot;:false},&quot;aggregates&quot;:[],&quot;widthDevices&quot;:[]},{&quot;dataType&quot;:&quot;Database&quot;,&quot;field&quot;:&quot;cpf&quot;,&quot;headerText&quot;:&quot;CPF&quot;,&quot;type&quot;:&quot;string&quot;,&quot;sortable&quot;:true,&quot;filterable&quot;:true,&quot;format&quot;:&quot;999.999.999-99;0&quot;,&quot;visible&quot;:true,&quot;visibleCrud&quot;:true,&quot;linkParentType&quot;:&quot;screen&quot;,&quot;linkParentLoadIfEmpty&quot;:false,&quot;required&quot;:false,&quot;inputType&quot;:&quot;default&quot;,&quot;comboboxOptions&quot;:{&quot;staticDataSource&quot;:[],&quot;filterKeyValues&quot;:{&quot;&quot;:&quot;&quot;,&quot;contains&quot;:&quot;Contendo&quot;,&quot;startswith&quot;:&quot;Iniciando com&quot;,&quot;endswith&quot;:&quot;Final com&quot;},&quot;customTemplate&quot;:false},&quot;aggregates&quot;:[],&quot;widthDevices&quot;:[]},{&quot;dataType&quot;:&quot;Command&quot;,&quot;headerText&quot;:&quot;{{ 'Action' | translate }}&quot;,&quot;sortable&quot;:false,&quot;filterable&quot;:false,&quot;visible&quot;:true,&quot;visibleCrud&quot;:true,&quot;linkParentType&quot;:&quot;screen&quot;,&quot;linkParentLoadIfEmpty&quot;:false,&quot;command&quot;:&quot;edit|destroy&quot;,&quot;required&quot;:false,&quot;inputType&quot;:&quot;default&quot;,&quot;comboboxOptions&quot;:{&quot;staticDataSource&quot;:[],&quot;filterKeyValues&quot;:{&quot;&quot;:&quot;&quot;,&quot;startswith&quot;:&quot;Iniciando com&quot;,&quot;contains&quot;:&quot;Contendo&quot;,&quot;endswith&quot;:&quot;Final com&quot;},&quot;customTemplate&quot;:false},&quot;aggregates&quot;:[],&quot;widthDevices&quot;:[]}],&quot;toolBarButtons&quot;:[{&quot;type&quot;:&quot;Native&quot;,&quot;title&quot;:&quot;create&quot;}],&quot;details&quot;:[],&quot;groupings&quot;:[]}" ng-model="vars.grid68958" class="" style="" scrollable="false">
+    </cron-grid>
+</section>
+
+<div data-component="crn-form" id="crn-form-form-Cliente-68958">
+    <section class="form" ng-show="Cliente.editing || Cliente.inserting">
+        <form crn-datasource="Cliente" class="">
+            <div class="tool-bar" ng-hide="datasource.editing || datasource.inserting">
+                <button aria-label="{{'StartInserting' | translate}}" class="btn btn-primary btn-fab k-button" data-component="crn-button" ng-click="datasource.startInserting()"><span class="k-icon k-i-plus"></span></button>
+                <button aria-label="{{'StartEditing' | translate}}" class="btn btn-primary btn-fab k-button" data-component="crn-button" ng-click="datasource.startEditing()"><span class="k-icon k-i-edit"></span></button>
+                <button aria-label="{{'Before' | translate}}" class="btn btn-primary btn-fab k-button" data-component="crn-button" ng-disabled="!datasource.hasPrevious()" ng-click="datasource.previous()"><span class="k-icon k-i-arrow-chevron-left"></span></button>
+                <button aria-label="{{'Next' | translate}}" class="btn btn-primary btn-fab k-button" data-component="crn-button" ng-disabled="!datasource.hasNext()" ng-click="datasource.next()"><span class="k-icon k-i-arrow-chevron-right"></span></button>
+                <button aria-label="{{'Remove' | translate}}" class="btn btn-danger btn-fab k-button" data-component="crn-button" ng-click="datasource.remove()"><span class="k-icon k-i-close"></span></button>
+            </div>
+            <div class="active-bar" ng-hide="!datasource.editing &amp;&amp; !datasource.inserting">
+                <button aria-label="{{'SaveChanges' | translate}}" class="btn btn-success btn-fab k-button" id="btn_crud_post41107" data-component="crn-button" ng-click="datasource.post()"><span class="k-icon k-i-check"></span></button>
+                <button aria-label="{{'CancelChanges' | translate}}" class="btn btn-danger btn-fab k-button" id="btn_crud_cancel41107" data-component="crn-button" ng-click="datasource.cancel()"><span class="k-icon k-i-cancel"></span></button>
+            </div>
+            <br>
+            <div class="crn-fieldset" ng-disabled="!datasource.editing &amp;&amp; !datasource.inserting">
+
+
+                    <div data-component="crn-textinput" id="crn-textinput-nome-68958" class="">
+                        <div class="form-group">
+                                <label for="textinput-nome" class="">Nome do cliente</label>
+ <!-- else for if !model.hasCronappFramework() -->
+                                    <input type="text" ng-model="Cliente.active.nome" class="form-control k-textbox" id="textinput-nome" placeholder="Nome do cliente" mask="" mask-placeholder="" ng-required="true">
+                             <!-- end if !model.hasCronappFramework() -->
+                        </div>
+                    </div>
+
+
+                    <div data-component="crn-textinput" id="crn-textinput-cpf-68958" class="">
+                        <div class="form-group">
+                                <label for="textinput-cpf" class="">CPF</label>
+ <!-- else for if !model.hasCronappFramework() -->
+                                    <input type="text" ng-model="Cliente.active.cpf" class="form-control k-textbox" id="textinput-cpf" placeholder="CPF" mask="999.999.999-99;0" mask-placeholder="" valid="cpf" data-error-message="{{'invalid.cpf' | translate}}" ng-required="true">
+                             <!-- end if !model.hasCronappFramework() -->
+                        </div>
+                    </div>
+
+
+                    
+
+
+                    <div data-component="crn-textinput" id="crn-textinput-telefone-68958" class="">
+                        <div class="form-group">
+                                <label for="textinput-telefone" class="">Telefone</label>
+ <!-- else for if !model.hasCronappFramework() -->
+                                    <input type="text" ng-model="Cliente.active.telefone" class="form-control k-textbox" id="textinput-telefone" placeholder="Telefone" mask="(99) 99999-9999;0" mask-placeholder="" ng-required="true">
+                             <!-- end if !model.hasCronappFramework() -->
+                        </div>
+                    </div>
+
+
+                    <div data-component="crn-textinput" id="crn-textinput-email-68958" class="">
+                        <div class="form-group">
+                                <label for="textinput-email" class="">Email</label>
+ <!-- else for if !model.hasCronappFramework() -->
+                                    <input type="email" ng-model="Cliente.active.email" class="form-control k-textbox" id="textinput-email" placeholder="Email" mask="" mask-placeholder="" ng-required="true">
+                             <!-- end if !model.hasCronappFramework() -->
+                        </div>
+                    </div>
+
+
+                    <div data-component="crn-textinput" id="crn-textinput-cep-68958" class="">
+                        <div class="form-group">
+                                <label for="textinput-cep" class="">CEP</label>
+ <!-- else for if !model.hasCronappFramework() -->
+                                    <input type="text" ng-model="Cliente.active.cep" class="form-control k-textbox" id="textinput-cep" placeholder="CEP" mask="99.999-999;0" mask-placeholder="" ng-required="true" ng-blur="cronapi.client('js.blockly.Cliente.getCep').run(Cliente.active.cep)">
+                             <!-- end if !model.hasCronappFramework() -->
+                        </div>
+                    </div>
+
+
+                    <div data-component="crn-textinput" id="crn-textinput-endereco-68958" class="">
+                        <div class="form-group">
+                                <label for="textinput-endereco" class="">Endereco</label>
+ <!-- else for if !model.hasCronappFramework() -->
+                                    <input type="text" ng-model="Cliente.active.endereco" class="form-control k-textbox" id="textinput-endereco" placeholder="Endereco" mask="" mask-placeholder="" ng-required="true">
+                             <!-- end if !model.hasCronappFramework() -->
+                        </div>
+                    </div>
+
+
+                    <div data-component="crn-textinput" id="crn-textinput-complemento-68958" class="">
+                        <div class="form-group">
+                                <label for="textinput-complemento" class="">Complemento</label>
+ <!-- else for if !model.hasCronappFramework() -->
+                                    <input type="text" ng-model="Cliente.active.complemento" class="form-control k-textbox" id="textinput-complemento" placeholder="Complemento" mask="" mask-placeholder="" ng-required="true">
+                             <!-- end if !model.hasCronappFramework() -->
+                        </div>
+                    </div>
+
+
+                    <div data-component="crn-textinput" id="crn-textinput-bairro-68958" class="">
+                        <div class="form-group">
+                                <label for="textinput-bairro" class="">Bairro</label>
+ <!-- else for if !model.hasCronappFramework() -->
+                                    <input type="text" ng-model="Cliente.active.bairro" class="form-control k-textbox" id="textinput-bairro" placeholder="Bairro" mask="" mask-placeholder="" ng-required="true">
+                             <!-- end if !model.hasCronappFramework() -->
+                        </div>
+                    </div>
+
+
+                    <div data-component="crn-textinput" id="crn-textinput-cidade-68958" class="">
+                        <div class="form-group">
+                                <label for="textinput-cidade" class="">Cidade</label>
+ <!-- else for if !model.hasCronappFramework() -->
+                                    <input type="text" ng-model="Cliente.active.cidade" class="form-control k-textbox" id="textinput-cidade" placeholder="Cidade" mask="" mask-placeholder="" ng-required="true">
+                             <!-- end if !model.hasCronappFramework() -->
+                        </div>
+                    </div>
+
+
+                    <div data-component="crn-textinput" id="crn-textinput-uf-68958" class="">
+                        <div class="form-group">
+                                <label for="textinput-uf" class="">UF</label>
+ <!-- else for if !model.hasCronappFramework() -->
+                                    <input type="text" ng-model="Cliente.active.uf" class="form-control k-textbox" id="textinput-uf" placeholder="UF" mask="" mask-placeholder="" ng-required="true" ng-maxlength="2">
+                             <!-- end if !model.hasCronappFramework() -->
+                        </div>
+                    </div>
+                <!-- NtoN  -->
+                <!-- NtoN  end-->
+            </div>
+        </form>
+    </section>
+    <section class="form" ng-show="Cliente.editing || Cliente.inserting">
+        <form>
+            <div>
+                <!-- OneToN -->
+                <!-- OneToOne  end -->
+            </div>
+        </form>
+         
+    </section>
+</div>
+
+
+</div>

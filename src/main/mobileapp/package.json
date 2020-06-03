@@ -1,0 +1,12 @@
+{
+  "name": "io.cronapp.apps.farmacianovo",
+  "displayName": "farmacia-novo",
+  "version": "1.0.0",
+  "description": "farmacia-novo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CronApp IDE",
+  "license": "Apache-2.0"
+}

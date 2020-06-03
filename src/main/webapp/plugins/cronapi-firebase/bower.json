@@ -1,0 +1,24 @@
+{
+  "name": "cronapi-firebase",
+  "version": "0.0.6",
+  "homepage": "https://github.com/CronApp/cronapi-firebase",
+  "authors": [
+    "Rodrigo Reis <digo.santos.reis@gmail.com>"
+  ],
+  "description": "A firebase gluonsoft for CronApp",
+  "main": "firebase.cronapi.js",
+  "keywords": [
+    "firebase",
+    "cronapp",
+    "gluonsoft",
+    "cronapi"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
