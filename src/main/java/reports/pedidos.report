@@ -2,8 +2,8 @@
   "ReportGuid": "814b9acad4e6ced774c96163f1f6dc14",
   "ReportName": "Report",
   "ReportAlias": "Report",
-  "ReportCreated": "/Date(1589012575000-0300)/",
-  "ReportChanged": "/Date(1589012575000-0300)/",
+  "ReportCreated": "/Date(1588969375000-0300)/",
+  "ReportChanged": "/Date(1588969375000-0300)/",
   "EngineVersion": "EngineV2",
   "CalculationMode": "Interpretation",
   "ReportUnit": "Centimeters",
@@ -594,27 +594,6 @@
                 "Ident": "StiInteraction"
               },
               "Text": {
-                "Value": "{pedido_reports.quantidade}"
-              },
-              "HorAlignment": "Center",
-              "VertAlignment": "Center",
-              "Border": "All;;;;;;;solid:0,0,0",
-              "Brush": "solid:146,208,80",
-              "TextBrush": "solid:Black",
-              "TextOptions": {
-                "WordWrap": true
-              }
-            },
-            "2": {
-              "Ident": "StiText",
-              "Name": "Datapedido_reports_produto_precoVenda",
-              "Guid": "24b5602a07b6ee1675751f0c96feb051",
-              "CanGrow": true,
-              "ClientRectangle": "9.6,0,2.8,0.8",
-              "Interaction": {
-                "Ident": "StiInteraction"
-              },
-              "Text": {
                 "Value": "{pedido_reports.produto_precoVenda}"
               },
               "HorAlignment": "Center",
@@ -631,7 +610,36 @@
                 "DecimalSeparator": ",",
                 "GroupSeparator": ".",
                 "PositivePattern": 2
-              }
+              },
+              "Type": "DataColumn"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Datapedido_reports_produto_precoVenda",
+              "Guid": "24b5602a07b6ee1675751f0c96feb051",
+              "CanGrow": true,
+              "ClientRectangle": "9.6,0,2.8,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{pedido_reports.quantidade}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:146,208,80",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextFormat": {
+                "Ident": "StiNumberFormatService",
+                "NegativePattern": 1,
+                "DecimalSeparator": ",",
+                "GroupSeparator": "."
+              },
+              "Type": "DataColumn"
             },
             "3": {
               "Ident": "StiText",

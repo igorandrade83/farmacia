@@ -11,7 +11,7 @@ window.blockly.js.blockly.Pedido.finalizar = function() {
   this.cronapi.util.callServerBlocklyAsynchronous('blockly.Pedido:salvarItens', function(sender_resposta) {
       resposta = sender_resposta;
     if (resposta) {
-      this.cronapi.screen.changeView("#/home/logged/venda",[  ]);
+      this.cronapi.screen.changeView("#/home/vendedor/boleto",[  ]);
     }
   }.bind(this), this.cronapi.screen.getScopeVariable('listaItensPedido'), this.cronapi.screen.getScopeVariable('cliente'));
 }
