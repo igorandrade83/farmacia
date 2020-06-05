@@ -143,7 +143,7 @@
   "GerarBoleto": "Gerar Boleto",
   "Nome": "Nome",
   "Telefone": "Telefone",
-  "Email": "Email",
+  "Email": "E-mail",
   "CEP": "CEP",
   "Endereco": "Endereço",
   "Complemento": "Complemento",
@@ -157,5 +157,8 @@
   "Foto": "Foto",
   "PrecoDeCusto": "Preço de Custo",
   "PrecoDeVenda": "Preço de Venda",
-  "Preco": "Preço"
+  "Preco": "Preço",
+  "ProdutoMaisVendido": "Produto mais vendido",
+  "Vendas": "Vendas",
+  "Adicionar": "Adicionar"
 }

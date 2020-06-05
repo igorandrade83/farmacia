@@ -10,7 +10,7 @@
                 <span id="left_arrowback_sr" class="sr-only">{{'Roles.view.Voltar' | translate}}</span>
             </button>
         </div>
-        <h1 class="title">Produto</h1>
+        <h1 class="title">{{'Produto' | translate}}</h1>
         <div side="right" class="buttons buttons-right header-item">
             <button aria-labelledby="right_plus_sr" class="button button-clear" ng-if="!Produto.inserting &amp;&amp; !Produto.editing" ng-click="Produto.startInserting()" data-component="crn-button" xattr-type="button-clear">
                 <i class="icon ion-ios-plus-empty"></i>
@@ -38,28 +38,28 @@
                 <div class="list" ng-disabled="!Produto.editing &amp;&amp; !Produto.inserting">
             <!-- codigo begin -->
             <label for="textinput-codigo-30253" class="item item-input item-stacked-label" data-component="crn-input-floating">
-                <span class="input-label">Código</span>
-                <input aria-label="Código" type="integer" placeholder="Código" ng-model="Produto.active.codigo" id="textinput-codigo-30253" name="textinput-codigo" mask="" required="required">
+                <span class="input-label">{{'Codigo' | translate}}</span>
+                <input aria-label="Código" type="integer" placeholder="{{'Codigo' | translate}}" ng-model="Produto.active.codigo" id="textinput-codigo-30253" name="textinput-codigo" mask="" required="required">
             </label>
             <!-- nome begin -->
             <label for="textinput-nome-30253" class="item item-input item-stacked-label" data-component="crn-input-floating">
-                <span class="input-label">Nome</span>
-                <input type="text" placeholder="Nome" ng-model="Produto.active.nome" id="textinput-nome-30253" name="textinput-nome" mask="" required="required">
+                <span class="input-label">{{'Nome' | translate}}</span>
+                <input type="text" placeholder="{{'Nome' | translate}}" ng-model="Produto.active.nome" id="textinput-nome-30253" name="textinput-nome" mask="" required="required">
             </label>
             <!-- precoCusto begin -->
             <label for="textinput-precoCusto-30253" class="item item-input item-stacked-label" data-component="crn-input-floating">
-                <span class="input-label">Preço de custo</span>
-                <input aria-label="Preço de custo" type="money-decimal" placeholder="Preço de custo" ng-model="Produto.active.precoCusto" id="textinput-precoCusto-30253" name="textinput-precoCusto" mask="" required="required">
+                <span class="input-label">{{'PrecoDeCusto' | translate}}</span>
+                <input aria-label="Preço de custo" type="money-decimal" placeholder="{{'PrecoDeCusto' | translate}}" ng-model="Produto.active.precoCusto" id="textinput-precoCusto-30253" name="textinput-precoCusto" mask="" required="required">
             </label>
             <!-- precoVenda begin -->
             <label for="textinput-precoVenda-30253" class="item item-input item-stacked-label" data-component="crn-input-floating">
-                <span class="input-label">Preço de Venda</span>
-                <input aria-label="Preço de Venda" type="money-decimal" placeholder="Preço de Venda" ng-model="Produto.active.precoVenda" id="textinput-precoVenda-30253" name="textinput-precoVenda" mask="" required="required">
+                <span class="input-label">{{'PrecoDeVenda' | translate}}</span>
+                <input aria-label="Preço de Venda" type="money-decimal" placeholder="{{'PrecoDeVenda' | translate}}" ng-model="Produto.active.precoVenda" id="textinput-precoVenda-30253" name="textinput-precoVenda" mask="" required="required">
             </label>
             <!-- categoria begin -->
             <datasource data-component="crn-datasource" name="Categoria" entity="farmacia.Categoria" keys="_objectKey" class="" schema="[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true}]"></datasource>
             <label for="textinput-categoria" class="item item-input item-select component-holder" data-component="crn-dynamic-select" id="crn-dynamic-select-categoria">
-                <span class="input-label">Categoria</span>
+                <span class="input-label">{{'Categoria' | translate}}</span>
                 <select aria-label="Categoria" crn-datasource="Categoria" ng-model="Produto.active.categoria" class="form-control" id="dynamic-categoria" name="dynamic-categoria" xkey-field="_objectKey" xdisplay-field="nome" required="required">
                     <option value="">None</option>
                 </select>
@@ -67,7 +67,7 @@
             <!-- marca begin -->
             <datasource data-component="crn-datasource" name="Marca" entity="farmacia.Marca" keys="_objectKey" class="" schema="[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true}]"></datasource>
             <label for="textinput-marca" class="item item-input item-select component-holder" data-component="crn-dynamic-select" id="crn-dynamic-select-marca">
-                <span class="input-label">Marca</span>
+                <span class="input-label">{{'Marca' | translate}}</span>
                 <select aria-label="Marca" crn-datasource="Marca" ng-model="Produto.active.marca" class="form-control" id="dynamic-marca" name="dynamic-marca" xkey-field="_objectKey" xdisplay-field="nome" required="required">
                     <option value="">None</option>
                 </select>
@@ -75,14 +75,14 @@
             <!-- fornecedor begin -->
             <datasource data-component="crn-datasource" name="Fornecedor" entity="farmacia.Fornecedor" keys="_objectKey" class="" schema="[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;cnpj&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;telefone&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;email&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true}]"></datasource>
             <label for="textinput-fornecedor" class="item item-input item-select component-holder" data-component="crn-dynamic-select" id="crn-dynamic-select-fornecedor">
-                <span class="input-label">Fornecedor</span>
+                <span class="input-label">{{'Fornecedor' | translate}}</span>
                 <select aria-label="Fornecedor" crn-datasource="Fornecedor" ng-model="Produto.active.fornecedor" class="form-control" id="dynamic-fornecedor" name="dynamic-fornecedor" xkey-field="_objectKey" xdisplay-field="nome" required="required">
                     <option value="">None</option>
                 </select>
             </label>
             <!-- foto begin -->
               <div class="item item-input item-stacked-label component-holder" data-component="crn-dynamic-image" id="crn-dynamic-image-foto">
-                  <label class="input-label">Foto</label>
+                  <label class="input-label">{{'Foto' | translate}}</label>
                   <div class="form-group">
                       <div alt="Foto" dynamic-image="" ng-model="Produto.active.foto" max-file-size="5MB" class="dynamic-image-container" ng-required="false">
                           {{"template.crud.clickToAddImage" | translate}}

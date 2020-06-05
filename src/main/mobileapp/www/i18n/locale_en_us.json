@@ -142,7 +142,7 @@
   "ValorTotal": "Total Amount",
   "GerarBoleto": "Generate PaymentSlip",
   "Nome": "Name",
-  "Telefone": "The phone",
+  "Telefone": "Phone",
   "Email": "E-mail",
   "CEP": "ZIP code",
   "Endereco": "Address",
@@ -150,12 +150,15 @@
   "Bairro": "Neighbourhood",
   "Cidade": "City",
   "UF": "UF",
-  "Quantidade": "The amount",
+  "Quantidade": "Amount",
   "Valor": "Value",
   "Total": "Total",
   "Codigo": "Code",
   "Foto": "Picture",
   "PrecoDeCusto": "Cost price",
   "PrecoDeVenda": "Price Sale",
-  "Preco": "Price"
+  "Preco": "Price",
+  "ProdutoMaisVendido": "Best selling product",
+  "Vendas": "Sales",
+  "Adicionar": "Add"
 }

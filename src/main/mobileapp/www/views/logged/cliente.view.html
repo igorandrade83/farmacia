@@ -10,7 +10,7 @@
                 <span id="left_arrowback_sr" class="sr-only">{{'Roles.view.Voltar' | translate}}</span>
             </button>
         </div>
-        <h1 class="title">Cliente</h1>
+        <h1 class="title">{{'Cliente' | translate}}</h1>
         <div side="right" class="buttons buttons-right header-item">
             <button aria-labelledby="right_plus_sr" class="button button-clear" ng-if="!Cliente.inserting &amp;&amp; !Cliente.editing" ng-click="Cliente.startInserting()" data-component="crn-button" xattr-type="button-clear">
                 <i class="icon ion-ios-plus-empty"></i>
@@ -43,47 +43,47 @@
             </label>
             <!-- nome begin -->
             <label for="textinput-nome-18347" class="item item-input item-stacked-label" data-component="crn-input-floating">
-                <span class="input-label">Nome Cliente</span>
-                <input type="text" placeholder="Nome Cliente" ng-model="Cliente.active.nome" id="textinput-nome-18347" name="textinput-nome" mask="" required="required">
+                <span class="input-label">{{'NomeDoCliente' | translate}}</span>
+                <input type="text" placeholder="Nome do Cliente" ng-model="Cliente.active.nome" id="textinput-nome-18347" name="textinput-nome" mask="" required="required">
             </label>
             <!-- telefone begin -->
             <label for="textinput-telefone-18347" class="item item-input item-stacked-label" data-component="crn-input-floating">
-                <span class="input-label">Telefone</span>
+                <span class="input-label">{{'Telefone' | translate}}</span>
                 <input type="tel" placeholder="Telefone" ng-model="Cliente.active.telefone" id="textinput-telefone-18347" name="textinput-telefone" mask="" required="required">
             </label>
             <!-- email begin -->
             <label for="textinput-email-18347" class="item item-input item-stacked-label" data-component="crn-input-floating">
-                <span class="input-label">Email</span>
+                <span class="input-label">{{'Email' | translate}}</span>
                 <input type="email" placeholder="Email" ng-model="Cliente.active.email" id="textinput-email-18347" name="textinput-email" mask="" required="required">
             </label>
             <!-- cep begin -->
             <label for="textinput-cep-18347" class="item item-input item-stacked-label" data-component="crn-input-floating">
-                <span class="input-label">CEP</span>
+                <span class="input-label">{{'CEP' | translate}}</span>
                 <input type="text" placeholder="CEP" ng-model="Cliente.active.cep" id="textinput-cep-18347" name="textinput-cep" mask="99.999-999" required="required" ng-blur="cronapi.client('js.blockly.Cliente.getCep').run(Cliente.active.cep)">
             </label>
             <!-- endereco begin -->
             <label for="textinput-endereco-18347" class="item item-input item-stacked-label" data-component="crn-input-floating">
-                <span class="input-label">Endereco</span>
-                <input type="text" placeholder="Endereco" ng-model="Cliente.active.endereco" id="textinput-endereco-18347" name="textinput-endereco" mask="" required="required">
+                <span class="input-label">{{'Endereco' | translate}}</span>
+                <input type="text" placeholder="Endereço" ng-model="Cliente.active.endereco" id="textinput-endereco-18347" name="textinput-endereco" mask="" required="required">
             </label>
             <!-- bairro begin -->
             <label for="textinput-bairro-18347" class="item item-input item-stacked-label" data-component="crn-input-floating">
-                <span class="input-label">Bairro</span>
+                <span class="input-label">{{'Bairro' | translate}}</span>
                 <input type="text" placeholder="Bairro" ng-model="Cliente.active.bairro" id="textinput-bairro-18347" name="textinput-bairro" mask="" required="required">
             </label>
             <!-- complemento begin -->
             <label for="textinput-complemento-18347" class="item item-input item-stacked-label" data-component="crn-input-floating">
-                <span class="input-label">Complemento</span>
+                <span class="input-label">{{'Complemento' | translate}}</span>
                 <input type="text" placeholder="Complemento" ng-model="Cliente.active.complemento" id="textinput-complemento-18347" name="textinput-complemento" mask="" required="required">
             </label>
             <!-- cidade begin -->
             <label for="textinput-cidade-18347" class="item item-input item-stacked-label" data-component="crn-input-floating">
-                <span class="input-label">Cidade</span>
+                <span class="input-label">{{'Cidade' | translate}}</span>
                 <input type="text" placeholder="Cidade" ng-model="Cliente.active.cidade" id="textinput-cidade-18347" name="textinput-cidade" mask="" required="required">
             </label>
             <!-- uf begin -->
             <label for="textinput-uf-18347" class="item item-input item-stacked-label" data-component="crn-input-floating">
-                <span class="input-label">UF</span>
+                <span class="input-label">{{'UF' | translate}}</span>
                 <input type="text" placeholder="UF" ng-model="Cliente.active.uf" id="textinput-uf-18347" name="textinput-uf" mask="" required="required" maxlength="2">
             </label>
 
