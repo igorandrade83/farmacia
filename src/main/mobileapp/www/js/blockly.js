@@ -10,5 +10,5 @@ window.translations.localesRef =  {"en*":"en_us","*":"pt_br","pt*":"pt_br"};
 document.write("<script src='js/blockly/auth/Login.blockly.js?1591191847000'></script>");
 document.write("<script src='js/blockly/auth/Home.blockly.js?1591191847000'></script>");
 document.write("<script src='js/blockly/auth/ChangePassword.blockly.js?1591191847000'></script>");
-document.write("<script src='js/blockly/Pedido.blockly.js?1591362315000'></script>");
+document.write("<script src='js/blockly/Pedido.blockly.js?1591381960000'></script>");
 document.write("<script src='js/blockly/Cliente.blockly.js?1591191847000'></script>");
