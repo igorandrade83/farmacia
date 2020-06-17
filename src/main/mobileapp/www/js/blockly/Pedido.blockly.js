@@ -52,7 +52,6 @@ window.blockly.js.blockly.Pedido.inserir = function(produto, quantidade) {
     item = this.cronapi.object.newObject();
     this.cronapi.object.setProperty(item, 'produto', produto);
     this.cronapi.object.setProperty(item, 'quantidade', quantidade);
-    console.log(String('Aqui') + String(this.cronapi.screen.getScopeVariable('listaItensPedido')));
     this.cronapi.screen.getScopeVariable('listaItensPedido').push(item);
     this.blockly.js.blockly.Pedido.limparVariaveis();
     this.blockly.js.blockly.Pedido.calcularTotal();
