@@ -27,7 +27,7 @@ public static Var ObterDados() throws Exception {
    public Var call() throws Exception {
     dadosPedido = Var.valueOf(ObterDadosPedido());
     dadosFaturamento = Var.valueOf(ObterDadosVendas());
-    cronapi.chart.Operations.createChart(Var.valueOf("chart4754"), Var.valueOf("bar"), cronapi.map.Operations.getJsonOrMapField(dadosPedido, Var.valueOf("legendas")), Var.VAR_NULL, cronapi.chart.Operations.createChartSerie(Var.valueOf("Total"), cronapi.map.Operations.getJsonOrMapField(dadosPedido, Var.valueOf("dados")), Var.VAR_NULL));
+    cronapi.chart.Operations.createChart(Var.valueOf("chart4754"), Var.valueOf("bar"), cronapi.map.Operations.getJsonOrMapField(dadosPedido, Var.valueOf("legendas")), Var.valueOf("{\n\n \"color\": [\n    \"black\",\n    \"red\",\n    \"black\"\n    ]   \n}"), cronapi.chart.Operations.createChartSerie(Var.valueOf("Total"), cronapi.map.Operations.getJsonOrMapField(dadosPedido, Var.valueOf("dados")), Var.VAR_NULL));
     cronapi.chart.Operations.createChart(Var.valueOf("chart6246"), Var.valueOf("line"), cronapi.map.Operations.getJsonOrMapField(dadosFaturamento, Var.valueOf("legendas")), Var.VAR_NULL, cronapi.chart.Operations.createChartSerie(Var.valueOf("Total"), cronapi.map.Operations.getJsonOrMapField(dadosFaturamento, Var.valueOf("dados")), Var.VAR_NULL));
     return Var.VAR_NULL;
    }

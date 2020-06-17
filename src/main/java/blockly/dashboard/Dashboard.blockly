@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><blockly audit="false" bpmnAble="false" formTarget="src/main/webapp/views/logged/home.view.html" resourceType="JAVA" ruleDescription="Dashboard" ruleName="Dashboard" ruleSynchronous="false" ruleTimeout="300" ruleType="I" soap="false">
-  <metadata scale="1" scrollx="69.5269645024274" scrolly="-354.6999999999997" target="^,3C2C^*,:kwRL5**B?2"/>
+  <metadata scale="1" scrollx="303.3999999999999" scrolly="-341.3096594333653" target="Agy?ZClKLG%UlJ:,K;Ip"/>
   <block colour="#fca03b" id="WTW9u7ynKO^lgbUI`X~=" origintype="procedures_defreturn" output="false" tooltip="Cria uma função que possui um valor de retorno." type="procedures_defreturn" x="-349" y="273">
     <field name="NAME">ObterDadosPedido</field>
     <comment h="80" pinned="false" w="160">Descreva esta função...</comment>
@@ -424,6 +424,18 @@
                         <field name="TEXT">legendas</field>
                       </block>
                     </value>
+                  </block>
+                </value>
+                <value name="ARG3">
+                  <block colour="#5ba593" dependencyby="Agy?ZClKLG%UlJ:,K;Ip" id="cj#Ad+i9n?a+LY$9gW@!" origintype="text" output="true" tooltip="function () { [native code] }" type="text">
+                    <field name="TEXT">{
+
+ "color": [
+    "black",
+    "red",
+    "black"
+    ]   
+}</field>
                   </block>
                 </value>
                 <value name="ARG4">

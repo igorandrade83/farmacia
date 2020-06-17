@@ -1610,5 +1610,110 @@
     },
     "serviceUrl": "api/cronapi/odata/v2/farmacia/query793073/",
     "audit": false
+  },
+  "query533349": {
+    "customId": "query533349",
+    "queryName": "anotacao-custom",
+    "sourceType": "blockly",
+    "baseEntity": "farmacia.entity.Anotacao",
+    "blockly": {
+      "type": "server",
+      "blocklyMethod": "Executar",
+      "blocklyClass": "blockly.Anotacao",
+      "blocklyLanguage": "java",
+      "blocklyParams": [],
+      "blocklyJson": {
+        "namespace": "blockly.Anotacao",
+        "sourcePath": "src/main/java/blockly/Anotacao.blockly",
+        "language": "java",
+        "methods": [
+          {
+            "name": "gerenciar",
+            "hasReturn": "true",
+            "params": []
+          },
+          {
+            "name": "listar",
+            "hasReturn": "true",
+            "params": []
+          },
+          {
+            "name": "Executar",
+            "hasReturn": "true",
+            "params": []
+          }
+        ]
+      },
+      "blocklyGETMethod": "Executar",
+      "blocklyPOSTMethod": "default",
+      "blocklyPUTMethod": "default",
+      "blocklyDELETEMethod": "default",
+      "blocklyFILTERMethod": "default",
+      "blocklyCOUNTMethod": "Executar"
+    },
+    "entitySimpleName": null,
+    "entityFullName": null,
+    "query": "",
+    "queryParamsValues": [],
+    "verbs": {
+      "GET": true,
+      "GETAuthorities": null,
+      "POST": true,
+      "POSTAuthorities": null,
+      "PUT": true,
+      "PUTAuthorities": null,
+      "DELETE": true,
+      "DELETEAuthorities": null,
+      "FILTER": true,
+      "FILTERAuthorities": null,
+      "COUNT": true,
+      "COUNTAuthorities": null
+    },
+    "events": {
+      "beforeInsert": null,
+      "beforeUpdate": null,
+      "beforeDelete": null,
+      "afterInsert": null,
+      "afterUpdate": null,
+      "afterDelete": null,
+      "onNavigate": null,
+      "onError": null
+    },
+    "defaultValues": {
+      "data": null,
+      "id": null,
+      "nome": null
+    },
+    "defaultValuesProperties": {
+      "data": {
+        "key": false,
+        "nullable": true,
+        "type": "Date"
+      },
+      "id": {
+        "key": true,
+        "nullable": false,
+        "type": "String"
+      },
+      "nome": {
+        "key": false,
+        "nullable": true,
+        "type": "String"
+      }
+    },
+    "security": {
+      "data": null,
+      "id": null,
+      "nome": null
+    },
+    "calcFields": {},
+    "calcFieldsSecurity": {},
+    "calcFieldsProperties": {},
+    "errorHandles": {
+      "primaryKey": null,
+      "foreignKey": null
+    },
+    "serviceUrl": "api/cronapi/odata/v2/app/query533349/",
+    "audit": false
   }
 }

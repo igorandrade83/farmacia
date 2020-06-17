@@ -10,7 +10,6 @@
       "chkApi": false,
       "dataSource": "jdbc/main",
       "disableCache": true,
-      "generationType": "drop-and-create-tables",
       "id": "paperCell",
       "namespace": "farmacia",
       "position": {
@@ -133,7 +132,7 @@
       "modelType": "Table",
       "name": "Categoria",
       "position": {
-        "x": 174,
+        "x": 52,
         "y": 326
       },
       "queries": [],
@@ -863,8 +862,8 @@
       "multitenantContextJsonIgnore": "false",
       "name": "Fornecedor",
       "position": {
-        "x": 564,
-        "y": 272
+        "x": 396,
+        "y": 182
       },
       "queries": [],
       "realName": "",
@@ -987,8 +986,8 @@
       "modelType": "Table",
       "name": "Marca",
       "position": {
-        "x": 368,
-        "y": 288
+        "x": 234,
+        "y": 340
       },
       "queries": [],
       "realName": "",
@@ -1481,8 +1480,8 @@
       "multitenantContextJsonIgnore": "false",
       "name": "Produto",
       "position": {
-        "x": 258,
-        "y": 14
+        "x": 102,
+        "y": 30
       },
       "queries": [],
       "realName": "",

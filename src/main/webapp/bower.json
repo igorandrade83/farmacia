@@ -26,6 +26,7 @@
     "cronapp-common-js": "2.5.3",
     "cronapi-js": "2.5.2",
     "cronapp-lib-js": "2.5.2",
-    "cronapi-firebase": "0.0.6"
+    "cronapi-firebase": "0.0.6",
+    "cronapi-pouchdb": "CronApp/cronapi-pouchdb#1.0.0"
   }
 }
