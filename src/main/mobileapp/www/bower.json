@@ -23,13 +23,14 @@
     "src"
   ],
   "dependencies": {
-    "cronapp-framework-mobile-js": "2.5.2",
-    "cronapp-common-js": "2.5.3",
+    "cronapp-framework-mobile-js": "2.5.5",
+    "cronapp-common-js": "2.5.5",
     "cronapi-js": "2.5.2",
     "cronapi-firebase": "0.0.6",
-    "cronapi-pouchdb": "CronApp/cronapi-pouchdb#1.0.0"
+    "cronapi-pouchdb": "CronApp/cronapi-pouchdb#1.1.0"
   },
   "resolutions": {
-    "angular": ">= 1.0.8"
+    "angular": ">= 1.0.8",
+    "cronapi-pouchdb": "1.1.0"
   }
 }

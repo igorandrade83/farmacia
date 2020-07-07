@@ -1,6 +1,6 @@
 {
   "name": "cronapp-common-js",
-  "version": "2.5.3",
+  "version": "2.5.5",
   "authors": [
     "Adir Lima <adir.santos@techne.com.br>"
   ],
@@ -20,14 +20,13 @@
     "test",
     "tests"
   ],
-  "_release": "2.5.3",
+  "_release": "2.5.5",
   "_resolution": {
     "type": "version",
-    "tag": "v2.5.3",
-    "commit": "a40461088c74759ae6c368458112eb0fae831ae7"
+    "tag": "2.5.5",
+    "commit": "143ddf7b28e4c4512025d0b8566760bb8bc95041"
   },
   "_source": "https://github.com/CronApp/cronapp-common-js.git",
-  "_target": "2.5.3",
-  "_originalSource": "cronapp-common-js",
-  "_direct": true
+  "_target": "2.5.5",
+  "_originalSource": "cronapp-common-js"
 }

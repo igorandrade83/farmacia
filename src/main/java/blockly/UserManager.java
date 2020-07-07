@@ -114,7 +114,7 @@ public static Var obterIdUsuario() throws Exception {
    public Var call() throws Exception {
     identificador = Var.VAR_NULL;
     try {
-         identificador = cronapi.database.Operations.query(Var.valueOf("app.entity.User"),Var.valueOf("select u.id from User u where u.userName = :userName"),Var.valueOf("userName",cronapi.util.Operations.getCurrentUserName()));
+         identificador = cronapi.database.Operations.getField(cronapi.database.Operations.query(Var.valueOf("app.entity.User"),Var.valueOf("select u.id from User u where u.userName = :userName"),Var.valueOf("userName",cronapi.util.Operations.getCurrentUserName())), Var.valueOf("this[0]"));
      } catch (Exception item_exception) {
           item = Var.valueOf(item_exception);
          System.out.println(item.getObjectAsString());
