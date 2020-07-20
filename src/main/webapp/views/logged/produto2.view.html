@@ -1,0 +1,203 @@
+<div id="starter" ng-init="" ng-destroy="" data-component="crn-start" screen-params="" primary-datasource="Produto">
+<h1 class="component-holder text-left h3 title" xattr-position="text-left" xattr-type="h3" data-component="crn-text-component" id="crn-text-component-73595">Produto</h1>
+
+<datasource data-component="crn-datasource" filter="" name="Produto" entity="farmacia.Produto" keys="_objectKey" rows-per-page="100" class="" schema="[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;codigo&quot;,&quot;type&quot;:&quot;Int32&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;precoCusto&quot;,&quot;type&quot;:&quot;Double&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;precoVenda&quot;,&quot;type&quot;:&quot;Double&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;fornecedor&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;foto&quot;,&quot;type&quot;:&quot;Binary&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;categoria&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;marca&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;controlado&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true},{&quot;name&quot;:&quot;fornecedor_nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;categoria_nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;marca_nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false}]" condition="{&quot;maxRecord&quot;:100,&quot;params&quot;:[],&quot;expression&quot;:{&quot;type&quot;:&quot;OR&quot;,&quot;args&quot;:[{&quot;type&quot;:&quot;%&quot;,&quot;left&quot;:&quot;nome&quot;,&quot;right&quot;:&quot;{{vars.search|raw}}&quot;,&quot;args&quot;:[]}]}}" lazy="true"></datasource>
+
+        <div role="search" ng-hide="Produto.inserting || Produto.editing" data-component="crn-textinput" id="crn-datasource-filter-general73595" class="">
+            <div class="form-group">
+                <label for="textinput-filter" class="">{{"template.crud.search" | translate}}</label>
+                <input type="text" ng-model="vars.search" id="textinput-filter" class="form-control k-textbox" value="" placeholder="{{'template.crud.search' | translate}}">
+            </div>
+        </div>
+
+<section ng-hide="Produto.editing || Produto.inserting" class="component-holder ng-binding ng-scope" data-component="crn-cron-grid" id="cron-crn-grid-search">
+    <cron-grid
+            options="{&quot;dataSourceScreen&quot;:{&quot;name&quot;:&quot;Produto&quot;,&quot;entity&quot;:&quot;farmacia.Produto&quot;,&quot;entityDataSource&quot;:{&quot;id&quot;:&quot;farmacia.Produto&quot;,&quot;customId&quot;:&quot;Produto&quot;,&quot;name&quot;:&quot;Produto&quot;,&quot;customQueryName&quot;:&quot;farmacia.Produto&quot;,&quot;paramValues&quot;:[],&quot;entityFullName&quot;:&quot;farmacia.entity.Produto&quot;,&quot;schemaFields&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;codigo&quot;,&quot;type&quot;:&quot;Int32&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;precoCusto&quot;,&quot;type&quot;:&quot;Double&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;precoVenda&quot;,&quot;type&quot;:&quot;Double&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;fornecedor&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;foto&quot;,&quot;type&quot;:&quot;Binary&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;categoria&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;marca&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;controlado&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true},{&quot;name&quot;:&quot;fornecedor_nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;categoria_nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;marca_nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false}],&quot;type&quot;:&quot;entity&quot;},&quot;schema&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;codigo&quot;,&quot;type&quot;:&quot;Int32&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;precoCusto&quot;,&quot;type&quot;:&quot;Double&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;precoVenda&quot;,&quot;type&quot;:&quot;Double&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;fornecedor&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;foto&quot;,&quot;type&quot;:&quot;Binary&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;categoria&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;marca&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;controlado&quot;,&quot;type&quot;:&quot;Boolean&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true},{&quot;name&quot;:&quot;fornecedor_nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;categoria_nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false},{&quot;name&quot;:&quot;marca_nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:true,&quot;key&quot;:false}],&quot;id&quot;:&quot;farmacia.Produto&quot;},&quot;allowPaging&quot;:true,&quot;allowSorting&quot;:true,&quot;allowGrouping&quot;:false,&quot;allowSelectionTotalPageToShow&quot;:true,&quot;allowRefreshGrid&quot;:true,&quot;allowSelectionRow&quot;:true,&quot;hideModalButtons&quot;:true,&quot;editable&quot;:&quot;datasource&quot;,&quot;columns&quot;:[{&quot;dataType&quot;:&quot;Database&quot;,&quot;field&quot;:&quot;nome&quot;,&quot;headerText&quot;:&quot;Nome&quot;,&quot;type&quot;:&quot;string&quot;,&quot;sortable&quot;:true,&quot;filterable&quot;:true,&quot;format&quot;:&quot;&quot;,&quot;visible&quot;:true,&quot;visibleCrud&quot;:true,&quot;linkParentType&quot;:&quot;screen&quot;,&quot;linkParentLoadIfEmpty&quot;:false,&quot;required&quot;:false,&quot;inputType&quot;:&quot;default&quot;,&quot;comboboxOptions&quot;:{&quot;dataSourceScreen&quot;:{&quot;schema&quot;:[]},&quot;relationDataSource&quot;:{&quot;schema&quot;:[]},&quot;staticDataSource&quot;:[],&quot;filterKeyValues&quot;:{&quot;&quot;:&quot;&quot;,&quot;contains&quot;:&quot;Contendo&quot;,&quot;startswith&quot;:&quot;Iniciando com&quot;,&quot;endswith&quot;:&quot;Final com&quot;},&quot;customTemplate&quot;:false},&quot;aggregates&quot;:[],&quot;widthDevices&quot;:[]},{&quot;dataType&quot;:&quot;Command&quot;,&quot;headerText&quot;:&quot;{{ 'Action' | translate }}&quot;,&quot;sortable&quot;:false,&quot;filterable&quot;:false,&quot;visible&quot;:true,&quot;visibleCrud&quot;:true,&quot;linkParentType&quot;:&quot;screen&quot;,&quot;linkParentLoadIfEmpty&quot;:false,&quot;command&quot;:&quot;edit|destroy&quot;,&quot;required&quot;:false,&quot;inputType&quot;:&quot;default&quot;,&quot;comboboxOptions&quot;:{&quot;dataSourceScreen&quot;:{&quot;schema&quot;:[]},&quot;relationDataSource&quot;:{&quot;schema&quot;:[]},&quot;staticDataSource&quot;:[],&quot;filterKeyValues&quot;:{&quot;&quot;:&quot;&quot;,&quot;contains&quot;:&quot;Contendo&quot;,&quot;startswith&quot;:&quot;Iniciando com&quot;,&quot;endswith&quot;:&quot;Final com&quot;},&quot;customTemplate&quot;:false},&quot;aggregates&quot;:[],&quot;widthDevices&quot;:[]}],&quot;toolBarButtons&quot;:[{&quot;type&quot;:&quot;Native&quot;,&quot;title&quot;:&quot;create&quot;}],&quot;details&quot;:[],&quot;groupings&quot;:[]}"
+            ng-model="vars.grid73595"
+            class=""
+            style=""
+            scrollable="false">
+    </cron-grid>
+</section>
+
+<div data-component="crn-form" id="crn-form-form-Produto-73595">
+    <section class="form" ng-show="Produto.editing || Produto.inserting">
+        <form crn-datasource="Produto" class="">
+            <div class="tool-bar" ng-hide="datasource.editing || datasource.inserting">
+                <button aria-label="{{'StartInserting' | translate}}" class="btn btn-primary btn-fab k-button" data-component="crn-button" ng-click="datasource.startInserting()"><span class="k-icon k-i-plus"></span></button>
+                <button aria-label="{{'StartEditing' | translate}}"  class="btn btn-primary btn-fab k-button" data-component="crn-button" ng-click="datasource.startEditing()"><span class="k-icon k-i-edit"></span></button>
+                <button aria-label="{{'Before' | translate}}" class="btn btn-primary btn-fab k-button" data-component="crn-button" ng-disabled="!datasource.hasPrevious()" ng-click="datasource.previous()"><span class="k-icon k-i-arrow-chevron-left"></span></button>
+                <button aria-label="{{'Next' | translate}}" class="btn btn-primary btn-fab k-button" data-component="crn-button" ng-disabled="!datasource.hasNext()" ng-click="datasource.next()"><span class="k-icon k-i-arrow-chevron-right"></span></button>
+                <button aria-label="{{'Remove' | translate}}" class="btn btn-danger btn-fab k-button" data-component="crn-button" ng-click="datasource.remove()"><span class="k-icon k-i-close"></span></button>
+            </div>
+            <div class="active-bar" ng-hide="!datasource.editing &amp;&amp; !datasource.inserting">
+                <button aria-label="{{'SaveChanges' | translate}}" class="btn btn-success btn-fab k-button" id="btn_crud_post41107" data-component="crn-button" ng-click="datasource.post()"><span class="k-icon k-i-check"></span></button>
+                <button aria-label="{{'CancelChanges' | translate}}" class="btn btn-danger btn-fab k-button" id="btn_crud_cancel41107" data-component="crn-button" ng-click="datasource.cancel()"><span class="k-icon k-i-cancel"></span></button>
+            </div>
+            <br/>
+            <div class="crn-fieldset" ng-disabled="!datasource.editing &amp;&amp; !datasource.inserting">
+
+
+                    <div data-component="crn-textinput" id="crn-textinput-nome-73595" class="">
+                        <div class="form-group">
+                                <label for="textinput-nome" class="">Nome</label>
+ <!-- else for if !model.hasCronappFramework() -->
+                                    <input
+                                            type="text"
+                                            ng-model="Produto.active.nome"
+                                            class="form-control k-textbox"
+                                            id="textinput-nome"
+                                            placeholder="Nome"
+                                            mask=""
+                                            mask-placeholder=""
+                                            ng-required="true">
+                             <!-- end if !model.hasCronappFramework() -->
+                        </div>
+                    </div>
+
+
+                    <div data-component="crn-textinput" id="crn-textinput-codigo-73595" class="">
+                        <div class="form-group">
+                                <label for="textinput-codigo" class="">Código</label>
+ <!-- else for if !model.hasCronappFramework() -->
+                                    <input
+                                            type="integer"
+                                            ng-model="Produto.active.codigo"
+                                            class="form-control k-textbox"
+                                            id="textinput-codigo"
+                                            placeholder="Código"
+                                            mask=""
+                                            mask-placeholder=""
+                                            ng-required="true">
+                             <!-- end if !model.hasCronappFramework() -->
+                        </div>
+                    </div>
+
+
+                    <div data-component="crn-textinput" id="crn-textinput-precoCusto-73595" class="">
+                        <div class="form-group">
+                                <label for="textinput-precoCusto" class="">Preço de custo</label>
+ <!-- else for if !model.hasCronappFramework() -->
+                                    <input
+                                            type="number"
+                                            ng-model="Produto.active.precoCusto"
+                                            class="form-control k-textbox"
+                                            id="textinput-precoCusto"
+                                            placeholder="Preço de custo"
+                                            mask=""
+                                            mask-placeholder=""
+                                            ng-required="true">
+                             <!-- end if !model.hasCronappFramework() -->
+                        </div>
+                    </div>
+
+
+                    <div data-component="crn-textinput" id="crn-textinput-precoVenda-73595" class="">
+                        <div class="form-group">
+                                <label for="textinput-precoVenda" class="">Preço de Venda</label>
+ <!-- else for if !model.hasCronappFramework() -->
+                                    <input
+                                            type="number"
+                                            ng-model="Produto.active.precoVenda"
+                                            class="form-control k-textbox"
+                                            id="textinput-precoVenda"
+                                            placeholder="Preço de Venda"
+                                            mask=""
+                                            mask-placeholder=""
+                                            ng-required="true">
+                             <!-- end if !model.hasCronappFramework() -->
+                        </div>
+                    </div>
+                        <datasource data-component="crn-datasource" name="FornecedorCombo" entity="farmacia.Fornecedor" keys="_objectKey" schema="[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;cnpj&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;telefone&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;email&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true}]" lazy=true></datasource>
+
+
+                    <div data-component="crn-enterprise-dynamic-combobox" id="crn-enterprise-dynamic-combobox-fornecedor-73595" class="">
+                        <div class="form-group">
+                                <label for="enterprise-dynamic-combobox-fornecedor" class="">Fornecedor</label>
+ <!-- else for if !model.hasCronappFramework() -->
+                                    <cron-dynamic-select
+                                            required="required"
+                                            id="enterprise-dynamic-combobox-fornecedor"
+                                            name="enterprise-dynamic-combobox-fornecedor"
+                                            options="{&quot;dataSourceScreen&quot;:{&quot;name&quot;:&quot;FornecedorCombo&quot;,&quot;entity&quot;:&quot;farmacia.Fornecedor&quot;,&quot;entityDataSource&quot;:{&quot;id&quot;:&quot;farmacia.Fornecedor&quot;,&quot;customId&quot;:&quot;Fornecedor&quot;,&quot;name&quot;:&quot;FornecedorCombo&quot;,&quot;customQueryName&quot;:&quot;farmacia.Fornecedor&quot;,&quot;paramValues&quot;:[],&quot;entityFullName&quot;:&quot;farmacia.entity.Fornecedor&quot;,&quot;schemaFields&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;cnpj&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;telefone&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;email&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true}],&quot;type&quot;:&quot;entity&quot;},&quot;schema&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;cnpj&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;telefone&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;email&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true}],&quot;id&quot;:&quot;farmacia.Fornecedor&quot;},&quot;filter&quot;:&quot;contains&quot;,&quot;dataTextField&quot;:&quot;nome&quot;,&quot;dataValueField&quot;:&quot;_objectKey&quot;,&quot;dynamic&quot;:true,&quot;valuePrimitive&quot;:true,&quot;relationDataSource&quot;:{&quot;schema&quot;:[]},&quot;staticDataSource&quot;:[],&quot;filterKeyValues&quot;:{&quot;&quot;:&quot;&quot;,&quot;contains&quot;:&quot;Contendo&quot;,&quot;startswith&quot;:&quot;Iniciando com&quot;,&quot;endswith&quot;:&quot;Final com&quot;},&quot;changeCursor&quot;:true,&quot;customTemplate&quot;:false}"
+                                            ng-model="Produto.active.fornecedor"
+                                            class="crn-select form-control">
+                                    </cron-dynamic-select>
+                             <!-- end if !model.hasCronappFramework() -->
+                        </div>
+                    </div>
+
+
+                    <div data-component="crn-dynamic-image" id="crn-textinput-foto-73595" class="">
+                        <div class="form-group">
+                                <label for="textinput-foto-button" class="">Foto</label>
+ <!-- else for if !model.hasCronappFramework() -->
+                                    <div dynamic-image img-alt-text="Foto" id="textinput-foto" ng-model="Produto.active.foto" max-file-size="5MB" class="dynamic-image-container" ng-required="false">
+                                        {{"template.crud.clickOrDragAnImage" | translate}}
+                                    </div>
+                             <!-- end if !model.hasCronappFramework() -->
+                        </div>
+                    </div>
+                        <datasource data-component="crn-datasource" name="CategoriaCombo" entity="farmacia.Categoria" keys="_objectKey" schema="[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true}]" lazy=true></datasource>
+
+
+                    <div data-component="crn-enterprise-dynamic-combobox" id="crn-enterprise-dynamic-combobox-categoria-73595" class="">
+                        <div class="form-group">
+                                <label for="enterprise-dynamic-combobox-categoria" class="">Categoria</label>
+ <!-- else for if !model.hasCronappFramework() -->
+                                    <cron-dynamic-select
+                                            required="required"
+                                            id="enterprise-dynamic-combobox-categoria"
+                                            name="enterprise-dynamic-combobox-categoria"
+                                            options="{&quot;dataSourceScreen&quot;:{&quot;name&quot;:&quot;CategoriaCombo&quot;,&quot;entity&quot;:&quot;farmacia.Categoria&quot;,&quot;entityDataSource&quot;:{&quot;id&quot;:&quot;farmacia.Categoria&quot;,&quot;customId&quot;:&quot;Categoria&quot;,&quot;name&quot;:&quot;CategoriaCombo&quot;,&quot;customQueryName&quot;:&quot;farmacia.Categoria&quot;,&quot;paramValues&quot;:[],&quot;entityFullName&quot;:&quot;farmacia.entity.Categoria&quot;,&quot;schemaFields&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true}],&quot;type&quot;:&quot;entity&quot;},&quot;schema&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true}],&quot;id&quot;:&quot;farmacia.Categoria&quot;},&quot;filter&quot;:&quot;contains&quot;,&quot;dataTextField&quot;:&quot;nome&quot;,&quot;dataValueField&quot;:&quot;_objectKey&quot;,&quot;dynamic&quot;:true,&quot;valuePrimitive&quot;:true,&quot;relationDataSource&quot;:{&quot;schema&quot;:[]},&quot;staticDataSource&quot;:[],&quot;filterKeyValues&quot;:{&quot;&quot;:&quot;&quot;,&quot;contains&quot;:&quot;Contendo&quot;,&quot;startswith&quot;:&quot;Iniciando com&quot;,&quot;endswith&quot;:&quot;Final com&quot;},&quot;changeCursor&quot;:true,&quot;customTemplate&quot;:false}"
+                                            ng-model="Produto.active.categoria"
+                                            class="crn-select form-control">
+                                    </cron-dynamic-select>
+                             <!-- end if !model.hasCronappFramework() -->
+                        </div>
+                    </div>
+                        <datasource data-component="crn-datasource" name="MarcaCombo" entity="farmacia.Marca" keys="_objectKey" schema="[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true}]" lazy=true></datasource>
+
+
+                    <div data-component="crn-enterprise-dynamic-combobox" id="crn-enterprise-dynamic-combobox-marca-73595" class="">
+                        <div class="form-group">
+                                <label for="enterprise-dynamic-combobox-marca" class="">Marca</label>
+ <!-- else for if !model.hasCronappFramework() -->
+                                    <cron-dynamic-select
+                                            required="required"
+                                            id="enterprise-dynamic-combobox-marca"
+                                            name="enterprise-dynamic-combobox-marca"
+                                            options="{&quot;dataSourceScreen&quot;:{&quot;name&quot;:&quot;MarcaCombo&quot;,&quot;entity&quot;:&quot;farmacia.Marca&quot;,&quot;entityDataSource&quot;:{&quot;id&quot;:&quot;farmacia.Marca&quot;,&quot;customId&quot;:&quot;Marca&quot;,&quot;name&quot;:&quot;MarcaCombo&quot;,&quot;customQueryName&quot;:&quot;farmacia.Marca&quot;,&quot;paramValues&quot;:[],&quot;entityFullName&quot;:&quot;farmacia.entity.Marca&quot;,&quot;schemaFields&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true}],&quot;type&quot;:&quot;entity&quot;},&quot;schema&quot;:[{&quot;name&quot;:&quot;id&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;nome&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:false},{&quot;name&quot;:&quot;_objectKey&quot;,&quot;type&quot;:&quot;String&quot;,&quot;nullable&quot;:false,&quot;key&quot;:true}],&quot;id&quot;:&quot;farmacia.Marca&quot;},&quot;filter&quot;:&quot;contains&quot;,&quot;dataTextField&quot;:&quot;nome&quot;,&quot;dataValueField&quot;:&quot;_objectKey&quot;,&quot;dynamic&quot;:true,&quot;valuePrimitive&quot;:true,&quot;relationDataSource&quot;:{&quot;schema&quot;:[]},&quot;staticDataSource&quot;:[],&quot;filterKeyValues&quot;:{&quot;&quot;:&quot;&quot;,&quot;contains&quot;:&quot;Contendo&quot;,&quot;startswith&quot;:&quot;Iniciando com&quot;,&quot;endswith&quot;:&quot;Final com&quot;},&quot;changeCursor&quot;:true,&quot;customTemplate&quot;:false}"
+                                            ng-model="Produto.active.marca"
+                                            class="crn-select form-control">
+                                    </cron-dynamic-select>
+                             <!-- end if !model.hasCronappFramework() -->
+                        </div>
+                    </div>
+
+
+                    <div data-component="crn-enterprise-checkbox" id="crn-textinput-controlado-73595" class="">
+                        <div class="form-group">
+ <!-- else for if !model.hasCronappFramework() -->
+                                    <input type="checkbox" crn-allow-null-values="false" class="k-checkbox" ng-model="Produto.active.controlado" id="textinput-controlado" placeholder="Controlado" required="required">
+                                    <label for="textinput-controlado" class="k-checkbox-label">Controlado</label>
+                             <!-- end if !model.hasCronappFramework() -->
+                        </div>
+                    </div>
+                <!-- NtoN  -->
+                <!-- NtoN  end-->
+            </div>
+        </form>
+    </section>
+    <section class="form" ng-show="Produto.editing || Produto.inserting">
+        <form>
+            <div>
+                <!-- OneToN -->
+                <!-- OneToOne  end -->
+            </div>
+        </form>
+    </section>
+</div>
+
+
+</div>

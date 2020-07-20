@@ -31,8 +31,7 @@ class AppConfiguration {
         return factoryBean;
     }
 
-    @Primary
-    @Bean(name = "app-TransactionManager")
+    @Primary @Bean(name = "app-TransactionManager")
     public PlatformTransactionManager transactionManager() {
         return new JpaTransactionManager(entityManagerFactory().getObject());
     }

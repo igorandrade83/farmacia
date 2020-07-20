@@ -638,7 +638,7 @@
     "_class": "farmacia.entity.Produto",
     "id": "346DB7AF-8B18-41E2-A1B0-33013DCE90F0",
     "codigo": "2",
-    "nome": "Shampoo Refrescante",
+    "nome": "Paracetamol",
     "precoCusto": "1.45",
     "precoVenda": "3.5",
     "categoria": {
@@ -652,15 +652,36 @@
     }
   },
   {
+    "_class": "farmacia.entity.StatusVenda",
+    "id": 1,
+    "descricao": "Aguardando liberação"
+  },
+  {
+    "_class": "farmacia.entity.StatusVenda",
+    "id": 2,
+    "descricao": "Aprovado"
+  },
+  {
+    "_class": "farmacia.entity.StatusVenda",
+    "id": 3,
+    "descricao": "Recusado"
+  },
+  {
     "_class": "farmacia.entity.Venda",
     "id": "622b77cf-9033-4172-98ef-707fdba0c3f4",
-    "valor": "12.27"
+    "valor": "12.27",
+    "statusVenda": {
+      "id": 2
+    }
   },
   {
     "_class": "farmacia.entity.Venda",
     "id": "3d4d8467-206f-4106-8f4f-727c734f9edc",
     "valor": "15.38",
-    "data": "2020-06-01"
+    "data": "2020-06-01",
+    "statusVenda": {
+      "id": 2
+    }
   },
   {
     "_class": "farmacia.entity.Pedido",
@@ -791,6 +812,107 @@
       "id": "0ef7a690-5b5b-41f6-9abe-7fe0cadb5962"
     },
     "pattern": "/app/",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "3624c270-e3e5-48b7-9335-796fbcb0516d",
+    "securable": {
+      "id": "67574137-a038-4783-9e2d-43ca3fb51635",
+      "name": "Public"
+    },
+    "pattern": "/app/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "a36e69cf-8cb1-4b53-a871-f6a46a507625",
+    "securable": {
+      "id": "67574137-a038-4783-9e2d-43ca3fb51635",
+      "name": "Public"
+    },
+    "pattern": "/api/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "8e6e838b-723b-4634-a0ec-24681f1479d8",
+    "securable": {
+      "id": "67574137-a038-4783-9e2d-43ca3fb51635",
+      "name": "Public"
+    },
+    "pattern": "/plugin/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "0c65c20b-09b3-429a-a3c7-312db32008fb",
+    "securable": {
+      "id": "cf2e4e05-c7ce-4333-b7bc-3fd20ee5a137",
+      "name": "Authenticated"
+    },
+    "pattern": "/api/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "ab3aa549-f417-45f2-bd1c-160181c342c3",
+    "securable": {
+      "id": "cf2e4e05-c7ce-4333-b7bc-3fd20ee5a137",
+      "name": "Authenticated"
+    },
+    "pattern": "/rest/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "c1590a62-8ece-4bca-89b0-6f1b3362b3cc",
+    "securable": {
+      "id": "67574137-a038-4783-9e2d-43ca3fb51635"
+    },
+    "pattern": "/views/public/chat.view.html",
     "getMethodAllowed": true,
     "headMethodAllowed": true,
     "putMethodAllowed": true,

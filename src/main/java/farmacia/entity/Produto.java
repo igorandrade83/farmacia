@@ -94,6 +94,13 @@ public class Produto implements Serializable {
         private Marca marca;
 
     /**
+    * @generated
+    */
+    @Column(name = "controlado", nullable = false, unique = false, insertable=true, updatable=true)
+        
+        private java.lang.Boolean controlado = false;
+
+    /**
     * Construtor
     * @generated
     */
@@ -269,6 +276,25 @@ public class Produto implements Serializable {
     */
     public Produto setMarca(Marca marca){
         this.marca = marca;
+        return this;
+    }
+    /**
+    * Obtém controlado
+    * return controlado
+    * @generated
+    */
+    
+    public java.lang.Boolean getControlado(){
+        return this.controlado;
+    }
+
+    /**
+    * Define controlado
+    * @param controlado controlado
+    * @generated
+    */
+    public Produto setControlado(java.lang.Boolean controlado){
+        this.controlado = controlado;
         return this;
     }
 

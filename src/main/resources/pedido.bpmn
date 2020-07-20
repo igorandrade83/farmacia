@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="definitions_a806acc8-1c05-4161-a424-4c44807a86f9" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="pedidoRemedio" isExecutable="true">
+    <endEvent id="EndEvent_0x6vqos">
+      <incoming>SequenceFlow_0ylilsm</incoming>
+    </endEvent>
+    <startEvent id="StartEvent_1kgcz1j">
+      <outgoing>SequenceFlow_1sl8yqd</outgoing>
+    </startEvent>
+    <sequenceFlow id="SequenceFlow_0ylilsm" sourceRef="Task_10wy8sl" targetRef="EndEvent_0x6vqos" />
+    <userTask id="verificarReceita" name="VerificarReceita" camunda:candidateGroups="Administrators">
+      <extensionElements>
+        <camunda:formData>
+          <camunda:formField id="receita" label="Receita válida?" type="boolean" />
+        </camunda:formData>
+      </extensionElements>
+      <incoming>SequenceFlow_1sl8yqd</incoming>
+      <outgoing>SequenceFlow_1bt5351</outgoing>
+    </userTask>
+    <sequenceFlow id="SequenceFlow_1sl8yqd" sourceRef="StartEvent_1kgcz1j" targetRef="verificarReceita" />
+    <exclusiveGateway id="ExclusiveGateway_13pm92t">
+      <incoming>SequenceFlow_1bt5351</incoming>
+      <outgoing>SequenceFlow_1thdkp1</outgoing>
+      <outgoing>SequenceFlow_1thjoyp</outgoing>
+    </exclusiveGateway>
+    <sequenceFlow id="SequenceFlow_1bt5351" sourceRef="verificarReceita" targetRef="ExclusiveGateway_13pm92t" />
+    <sequenceFlow id="SequenceFlow_1thdkp1" sourceRef="ExclusiveGateway_13pm92t" targetRef="Task_10wy8sl">
+      <conditionExpression xsi:type="tFormalExpression">${receita == true}</conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="SequenceFlow_1thjoyp" sourceRef="ExclusiveGateway_13pm92t" targetRef="Task_0hw27p7">
+      <conditionExpression xsi:type="tFormalExpression">${receita == false}</conditionExpression>
+    </sequenceFlow>
+    <endEvent id="EndEvent_1j0fgoe">
+      <incoming>SequenceFlow_15mszd8</incoming>
+    </endEvent>
+    <sequenceFlow id="SequenceFlow_15mszd8" sourceRef="Task_0hw27p7" targetRef="EndEvent_1j0fgoe" />
+    <serviceTask id="Task_0hw27p7" name="Rejeitar" camunda:expression="${blockly.call(&#39;blockly.bpmn.Venda&#39;,&#39;reprovar&#39;,idVenda)}">
+      <incoming>SequenceFlow_1thjoyp</incoming>
+      <outgoing>SequenceFlow_15mszd8</outgoing>
+    </serviceTask>
+    <serviceTask id="Task_10wy8sl" name="Aprovar" camunda:expression="${blockly.call(&#39;blockly.bpmn.Venda&#39;,&#39;aprovar&#39;,idVenda)}">
+      <incoming>SequenceFlow_1thdkp1</incoming>
+      <outgoing>SequenceFlow_0ylilsm</outgoing>
+    </serviceTask>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_8473a774-8295-4416-9158-48905f7a8a0a">
+    <bpmndi:BPMNPlane id="BPMNPlane_abcc9d48-0e62-479b-9743-8b1e14f7d275" bpmnElement="pedidoRemedio">
+      <bpmndi:BPMNShape id="EndEvent_0x6vqos_di" bpmnElement="EndEvent_0x6vqos">
+        <dc:Bounds x="709" y="81" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="StartEvent_1kgcz1j_di" bpmnElement="StartEvent_1kgcz1j">
+        <dc:Bounds x="119" y="81" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0ylilsm_di" bpmnElement="SequenceFlow_0ylilsm">
+        <di:waypoint x="654" y="99" />
+        <di:waypoint x="709" y="99" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_1vplum5_di" bpmnElement="verificarReceita">
+        <dc:Bounds x="243" y="59" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1sl8yqd_di" bpmnElement="SequenceFlow_1sl8yqd">
+        <di:waypoint x="155" y="99" />
+        <di:waypoint x="243" y="99" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ExclusiveGateway_13pm92t_di" bpmnElement="ExclusiveGateway_13pm92t" isMarkerVisible="true">
+        <dc:Bounds x="434" y="74" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1bt5351_di" bpmnElement="SequenceFlow_1bt5351">
+        <di:waypoint x="343" y="99" />
+        <di:waypoint x="434" y="99" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1thdkp1_di" bpmnElement="SequenceFlow_1thdkp1">
+        <di:waypoint x="484" y="99" />
+        <di:waypoint x="554" y="99" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1thjoyp_di" bpmnElement="SequenceFlow_1thjoyp">
+        <di:waypoint x="459" y="124" />
+        <di:waypoint x="459" y="195" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="EndEvent_1j0fgoe_di" bpmnElement="EndEvent_1j0fgoe">
+        <dc:Bounds x="441" y="339" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_15mszd8_di" bpmnElement="SequenceFlow_15mszd8">
+        <di:waypoint x="459" y="275" />
+        <di:waypoint x="459" y="339" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_0oqj7fq_di" bpmnElement="Task_0hw27p7">
+        <dc:Bounds x="409" y="195" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_0pfgdw0_di" bpmnElement="Task_10wy8sl">
+        <dc:Bounds x="554" y="59" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

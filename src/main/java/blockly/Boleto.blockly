@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><blockly audit="false" bpmnAble="false" formTarget="src/main/webapp/views/vendedor/boleto.view.html" resourceType="JAVA" ruleDescription="Boleto" ruleName="Boleto" ruleSynchronous="false" ruleTimeout="300" ruleType="I" soap="false">
-  <metadata scale="1" scrollx="322.4" scrolly="-39.69999999999999" target="z.KCd0._)^Wt/CooPi^4"/>
+<?xml version="1.0" encoding="UTF-8"?><blockly audit="false" bpmnAble="false" formTarget="src/main/webapp/views/vendedor/boleto.view.html" resourceType="JAVA" ruleDescription="Boleto" ruleName="Boleto" ruleSecurity="{&quot;post&quot;:&quot;Public&quot;,&quot;get&quot;:&quot;Public&quot;,&quot;execute&quot;:&quot;Public&quot;,&quot;delete&quot;:&quot;Public&quot;,&quot;put&quot;:&quot;Public&quot;}" ruleSynchronous="false" ruleTimeout="300" ruleType="I" soap="false">
+  <metadata scale="1" scrollx="320.6999999999998" scrolly="-218.19999999999987" target="z.KCd0._)^Wt/CooPi^4"/>
   <block colour="#fca03b" id="@tSWOT-KtE(*q*d+n{Uk" origintype="procedures_defnoreturn" output="false" tooltip="Cria uma função que não tem retorno." type="procedures_defnoreturn" x="-352" y="-142">
     <mutation>
       <arg name="vendaId"/>
@@ -785,7 +785,7 @@
       </block>
     </statement>
   </block>
-  <block colour="#fca03b" id="z.KCd0._)^Wt/CooPi^4" origintype="procedures_defreturn" output="false" tooltip="Cria uma função que possui um valor de retorno." type="procedures_defreturn" x="-249" y="86">
+  <block colour="#fca03b" id="z.KCd0._)^Wt/CooPi^4" origintype="procedures_defreturn" output="false" tooltip="Cria uma função que possui um valor de retorno." type="procedures_defreturn" x="-217" y="98">
     <mutation>
       <arg name="vendaId"/>
     </mutation>

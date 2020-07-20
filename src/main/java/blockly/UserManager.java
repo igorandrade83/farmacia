@@ -124,5 +124,27 @@ public static Var obterIdUsuario() throws Exception {
  }.call();
 }
 
+/**
+ *
+ * @return Var
+ */
+// Descreva esta função...
+public static Var obterLoginUsuario() throws Exception {
+ return new Callable<Var>() {
+
+   private Var Entidade = Var.VAR_NULL;
+   private Var userName = Var.VAR_NULL;
+   private Var email = Var.VAR_NULL;
+   private Var ENCRYPT = Var.VAR_NULL;
+   private Var password = Var.VAR_NULL;
+   private Var identificador = Var.VAR_NULL;
+   private Var item = Var.VAR_NULL;
+
+   public Var call() throws Exception {
+    return cronapi.util.Operations.getCurrentUserName();
+   }
+ }.call();
+}
+
 }
 
