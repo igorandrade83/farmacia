@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><blockly audit="false" bpmnAble="false" formTarget="" resourceType="JAVA" ruleDescription="Cliente" ruleName="Cliente" ruleSynchronous="false" ruleTimeout="" ruleType="I" soap="false">
-  <metadata scale="1" scrollx="438.70000000000005" scrolly="-88.5" target="Anb:u5+^,0vLkL9QIqn5"/>
+  <metadata scale="1" scrollx="438.7000000000004" scrolly="-194.5" target="Anb:u5+^,0vLkL9QIqn5"/>
   <block colour="#995ba5" id="Anb:u5+^,0vLkL9QIqn5" origintype="procedures_defreturn" output="false" tooltip="Cria uma função que possui um valor de retorno." type="procedures_defreturn" x="-350" y="130">
     <mutation>
       <arg name="Entidade&amp;lt;farmacia.entity.Venda&amp;gt;"/>
@@ -62,21 +62,46 @@
           </block>
         </value>
         <statement name="CATCH1">
-          <block colour="#0088ee" dependencyby="Anb:u5+^,0vLkL9QIqn5" id="encQ}lylh~m4A.Ux{Wa)" origintype="variables_set" output="false" tooltip="Define esta variável para o valor da entrada." type="variables_set">
-            <field name="VAR">nomeCliente</field>
-            <value name="VALUE">
-              <block colour="#5ba593" dependencyby="Anb:u5+^,0vLkL9QIqn5" id="4iQ@Mv?JK)B?b-G3Y$Mf" origintype="text" output="true" tooltip="function () { [native code] }" type="text">
-                <field name="TEXT">Erro</field>
+          <block colour="#487f7f" dependencyby="Anb:u5+^,0vLkL9QIqn5" id="*Bf_Y14f,FMuVF7{K:@*" multilayer="false" namespace="cronapi.util.Operations.log" origintype="procedures_callnoreturn" output="false" returntype="ObjectType.VOID" tooltip="%3Cdiv%20class=%22name%22%3E%3Cstrong%3ENome:%3C/strong%3E%3Cdiv%3ELogar%3C/div%3E%3C/div%3E%3Cdiv%20class=%22description%22%3E%3Cstrong%3EDescri%C3%A7%C3%A3o:%3C/strong%3E%3Cdiv%3ELoga%20mensagens%20da%20aplica%C3%A7%C3%A3o%20de%20acordo%20com%20a%20configura%C3%A7%C3%A3o.%20Por%20padr%C3%A3o,%20loga-se%20na%20sa%C3%ADda%20do%20console.%3C/div%3E%3C/div%3E%3Cdiv%20class=%22params%22%3E%3Cstrong%3EParam%C3%AAtro:%3C/strong%3E%3Cdiv%3E%3Cspan%3E%20-%20Categoria%20:%20Texto%3C/span%3E%3Cdiv%3E%20Chave%20de%20refer%C3%AAncia%20dessa%20mensagem%20de%20log.%20Normalmente%20%C3%A9%20o%20nome%20do%20bloco.%3C/div%3E%3Cspan%3E%20-%20N%C3%ADvel%20de%20Log%20:%20Texto%3C/span%3E%3Cdiv%3E%20%C3%89%20o%20n%C3%ADvel%20de%20log%20que%20ser%C3%A1%20logado.%20Se%20estiver%20abaixo%20do%20determinado%20nas%20configura%C3%A7%C3%B5es,%20o%20sistema%20n%C3%A3o%20vai%20logar.%3C/div%3E%3Cspan%3E%20-%20Mensagem%20de%20log%20:%20Texto%3C/span%3E%3Cdiv%3E%20Texto%20que%20deseja%20logar.%3C/div%3E%3Cspan%3E%20-%20Detalhe%20de%20log%20:%20Objeto%3C/span%3E%3Cdiv%3E%20Pode%20ser%20um%20texto%20ou%20um%20objeto%20de%20exce%C3%A7%C3%A3o%20(erro).%3C/div%3E%3C/div%3E%3C/div%3E%3Cdiv%20class=%22link%22%3E%3Cstrong%3EAjuda:%3C/strong%3E%3Cdiv%20class=%22tooltip-link%22%3E%3Ca%20target=%22_blank%22%20href=%22https://docs.cronapp.io/display/CRON2/cronapi.util.Operations.log%22%3Ehttps://docs.cronapp.io/display/CRON2/cronapi.util.Operations.log%3C/a%3E%3C/div%3E%3C/div%3E" type="procedures_callnoreturn">
+            <mutation name="{{cronapi.util.Operations.log}}" return-raw-type="void">
+              <arg cronapi-raw-type="cronapi.Var" cronapi-type="ObjectType.STRING" name="Categoria"/>
+              <arg cronapi-raw-type="cronapi.Var" cronapi-type="ObjectType.STRING" name="Nível de Log"/>
+              <arg cronapi-raw-type="cronapi.Var" cronapi-type="ObjectType.STRING" name="Mensagem de log"/>
+              <arg cronapi-raw-type="cronapi.Var" cronapi-type="ObjectType.OBJECT" name="Detalhe de log"/>
+            </mutation>
+            <value name="ARG0">
+              <shadow colour="#5ba593" dependencyby="Anb:u5+^,0vLkL9QIqn5" id="zx3~RadHru/3%oZSN;W/" origintype="text" output="true" tooltip="function () { [native code] }" type="text">
+                <field name="TEXT">General</field>
+              </shadow>
+            </value>
+            <value name="ARG1">
+              <block colour="#487f7f" dependencyby="Anb:u5+^,0vLkL9QIqn5" id="J|~?n1_Y;f{9{!p*OC]X" origintype="util_dropdown" output="true" type="util_dropdown">
+                <mutation>
+                  <arg name="INFO" value="Informação"/>
+                  <arg name="SEVERE" value="Erro"/>
+                  <arg name="WARNING" value="Aviso"/>
+                  <arg name="CONFIG" value="Configuração"/>
+                  <arg name="FINE" value="Refinado Baixo"/>
+                  <arg name="FINER" value="Refinado Médio"/>
+                  <arg name="FINEST" value="Refinado Alto"/>
+                </mutation>
+                <field name="SELECT">SEVERE</field>
+              </block>
+            </value>
+            <value name="ARG2">
+              <shadow colour="#5ba593" dependencyby="Anb:u5+^,0vLkL9QIqn5" id="HDN;(NU=h)5JhdB5K}|U" origintype="text" output="true" tooltip="function () { [native code] }" type="text">
+                <field name="TEXT"/>
+              </shadow>
+              <block colour="#5ba593" dependencyby="Anb:u5+^,0vLkL9QIqn5" id="+DB:c(U#s+X,DkCKA/hP" origintype="text" output="true" tooltip="function () { [native code] }" type="text">
+                <field name="TEXT">Erro ao obter nome</field>
               </block>
             </value>
             <next>
-              <block colour="#5ba58c" dependencyby="Anb:u5+^,0vLkL9QIqn5" id="n~L*hUCrbf^%djRX,A!U" origintype="text_print" output="false" tooltip="Imprime o texto, número ou valor especificado." type="text_print">
-                <value name="TEXT">
-                  <shadow colour="#5ba593" dependencyby="Anb:u5+^,0vLkL9QIqn5" id="pA=uzW#D#P#{eUq@hCF$" origintype="text" output="true" tooltip="function () { [native code] }" type="text">
-                    <field name="TEXT">abc</field>
-                  </shadow>
-                  <block colour="#0088ee" dependencyby="Anb:u5+^,0vLkL9QIqn5" id="HAH+(24V}]p?X*fF+yC9" origintype="variables_get" output="true" tooltip="Retorna o valor desta variável." type="variables_get">
-                    <field name="VAR">erro</field>
+              <block colour="#0088ee" dependencyby="Anb:u5+^,0vLkL9QIqn5" id="encQ}lylh~m4A.Ux{Wa)" origintype="variables_set" output="false" tooltip="Define esta variável para o valor da entrada." type="variables_set">
+                <field name="VAR">nomeCliente</field>
+                <value name="VALUE">
+                  <block colour="#5ba593" dependencyby="Anb:u5+^,0vLkL9QIqn5" id="4iQ@Mv?JK)B?b-G3Y$Mf" origintype="text" output="true" tooltip="function () { [native code] }" type="text">
+                    <field name="TEXT">Erro</field>
                   </block>
                 </value>
               </block>

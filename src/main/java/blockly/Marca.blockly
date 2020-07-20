@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><blockly audit="false" bpmnAble="true" formTarget="" resourceType="JAVA" ruleDescription="Marca" ruleName="Marca" ruleSynchronous="false" ruleTimeout="300" ruleType="I" soap="false">
-  <metadata scale="1" scrollx="450.79999999999995" scrolly="-83.70000000000005" target="Anb:u5+^,0vLkL9QIqn5"/>
-  <block colour="#995ba5" id="Anb:u5+^,0vLkL9QIqn5" origintype="procedures_defreturn" output="false" tooltip="Cria uma função que possui um valor de retorno." type="procedures_defreturn" x="-350" y="130">
-    <field name="NAME">cadastrar</field>
-    <comment h="80" pinned="false" w="160">Marca</comment>
-  </block>
-</blockly>

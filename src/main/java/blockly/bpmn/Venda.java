@@ -39,7 +39,10 @@ public static Var aprovar(Var idVenda) throws Exception {
      } catch (Exception exception_exception) {
           exception = Var.valueOf(exception_exception);
 
-        System.out.println(exception.getObjectAsString());
+        cronapi.util.Operations.log(
+        Var.valueOf("General"),
+        Var.valueOf("SEVERE"),
+        Var.valueOf("Erro ao aprovar a venda"), Var.VAR_NULL);
      }
     return Var.VAR_NULL;
    }
@@ -66,7 +69,10 @@ public static Var reprovar(Var idVenda) throws Exception {
      } catch (Exception exception_exception) {
           exception = Var.valueOf(exception_exception);
 
-        System.out.println(exception.getObjectAsString());
+        cronapi.util.Operations.log(
+        Var.valueOf("General"),
+        Var.valueOf("SEVERE"),
+        Var.valueOf("Erro ao reprovar a venda"), Var.VAR_NULL);
      }
     return Var.VAR_NULL;
    }

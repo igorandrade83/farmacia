@@ -146,10 +146,13 @@ public static void emitir(Var vendaId) throws Exception {
      } catch (Exception erro_exception) {
           erro = Var.valueOf(erro_exception);
 
-        System.out.println(erro.getObjectAsString());
+        cronapi.util.Operations.log(
+        Var.valueOf("General"),
+        Var.valueOf("SEVERE"),
+        Var.valueOf("Erro ao tentar gerar o boleto"), Var.VAR_NULL);
 
         cronapi.util.Operations.callClientFunction( Var.valueOf("cronapi.screen.notify"), Var.valueOf("error"),
-        Var.valueOf("Erro ao gerar o boleto"));
+        Var.valueOf("Erro ao tentar gerar o boleto"));
      }
    return Var.VAR_NULL;
    }

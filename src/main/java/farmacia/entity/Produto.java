@@ -58,7 +58,7 @@ public class Produto implements Serializable {
     /**
     * @generated
     */
-    @Column(name = "precoVenda", nullable = false, unique = false, insertable=true, updatable=true)
+    @Column(name = "precoVenda", nullable = false, unique = false, precision=10, scale=2, insertable=true, updatable=true)
         
         private java.lang.Double precoVenda;
 

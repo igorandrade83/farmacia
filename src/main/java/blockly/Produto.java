@@ -35,7 +35,10 @@ public static Var consultar(Var codigo) throws Exception {
      } catch (Exception exception_exception) {
           exception = Var.valueOf(exception_exception);
 
-        System.out.println(exception.getObjectAsString());
+        cronapi.util.Operations.log(
+        Var.valueOf("General"),
+        Var.valueOf("SEVERE"),
+        Var.valueOf("Erro ao buscar produto"), Var.VAR_NULL);
 
         produto =
         cronapi.map.Operations.createObjectMapWith(Var.valueOf("msg",
@@ -67,7 +70,7 @@ public static Var listarProdutos() throws Exception {
     try {
 
         resposta =
-        Var.valueOf("<ul>");
+        Var.valueOf(montarTemplate());
 
         produtos =
         cronapi.database.Operations.query(Var.valueOf("farmacia.entity.Produto"),Var.valueOf("select p from Produto p"));
@@ -83,47 +86,57 @@ public static Var listarProdutos() throws Exception {
                 Var.valueOf(
                 resposta.toString() +
                 Var.valueOf(
-                Var.valueOf("<li>").toString() +
+                Var.valueOf("<tr><td>").toString() +
                 Var.valueOf(
                 cronapi.json.Operations.getJsonOrMapField(i,
                 Var.valueOf("codigo")).toString() +
-                Var.valueOf(" - ").toString()).toString() +
+                Var.valueOf("</td><td>").toString()).toString() +
                 cronapi.json.Operations.getJsonOrMapField(i,
                 Var.valueOf("nome")).toString() +
                 Var.valueOf(
-                Var.valueOf("- R$").toString() +
+                Var.valueOf("</td><td>R$").toString() +
+                Var.valueOf(blockly.custom.Custom.formatRealValue(
                 cronapi.json.Operations.getJsonOrMapField(i,
-                Var.valueOf("precoVenda")).toString() +
-                Var.valueOf("</li>").toString()).toString()).toString());
+                Var.valueOf("precoVenda")))).toString() +
+                Var.valueOf("</td></tr>").toString()).toString()).toString());
             } else {
-
-                resposta =
-                Var.valueOf(
-                Var.valueOf("<li>").toString() +
-                Var.valueOf(
-                cronapi.json.Operations.getJsonOrMapField(i,
-                Var.valueOf("codigo")).toString() +
-                Var.valueOf(" - ").toString()).toString() +
-                cronapi.json.Operations.getJsonOrMapField(i,
-                Var.valueOf("nome")).toString() +
-                Var.valueOf(
-                Var.valueOf(" - R$").toString() +
-                cronapi.json.Operations.getJsonOrMapField(i,
-                Var.valueOf("precoVenda")).toString() +
-                Var.valueOf("</li>").toString()).toString());
+              {}
             }
         } // end for
 
         resposta =
         Var.valueOf(
         resposta.toString() +
-        Var.valueOf("</ul>").toString());
+        Var.valueOf("</table>").toString());
      } catch (Exception exception_exception) {
           exception = Var.valueOf(exception_exception);
 
-        System.out.println(exception.getObjectAsString());
+        cronapi.util.Operations.log(
+        Var.valueOf("General"),
+        Var.valueOf("SEVERE"),
+        Var.valueOf("Erro ao listar os produtos"), Var.VAR_NULL);
      }
     return resposta;
+   }
+ }.call();
+}
+
+/**
+ *
+ * @return Var
+ */
+// Descreva esta função...
+public static Var montarTemplate() throws Exception {
+ return new Callable<Var>() {
+
+   private Var resposta = Var.VAR_NULL;
+   private Var produtos = Var.VAR_NULL;
+   private Var i = Var.VAR_NULL;
+   private Var exception = Var.VAR_NULL;
+
+   public Var call() throws Exception {
+    return
+Var.valueOf("<table>\n  <tr>\n    <th>Código</th>\n    <th>Produto</th> \n    <th>Preço</th>\n  </tr>");
    }
  }.call();
 }

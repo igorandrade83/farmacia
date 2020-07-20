@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><blockly audit="false" bpmnAble="false" formTarget="src/main/webapp/views/vendedor/boleto.view.html" resourceType="JAVA" ruleDescription="Boleto" ruleName="Boleto" ruleSecurity="{&quot;post&quot;:&quot;Public&quot;,&quot;get&quot;:&quot;Public&quot;,&quot;execute&quot;:&quot;Public&quot;,&quot;delete&quot;:&quot;Public&quot;,&quot;put&quot;:&quot;Public&quot;}" ruleSynchronous="false" ruleTimeout="300" ruleType="I" soap="false">
-  <metadata scale="1" scrollx="320.6999999999998" scrolly="-218.19999999999987" target="z.KCd0._)^Wt/CooPi^4"/>
+  <metadata scale="1" scrollx="439.7" scrolly="-2467.500000000001" target="@tSWOT-KtE(*q*d+n{Uk"/>
   <block colour="#fca03b" id="@tSWOT-KtE(*q*d+n{Uk" origintype="procedures_defnoreturn" output="false" tooltip="Cria uma função que não tem retorno." type="procedures_defnoreturn" x="-352" y="-142">
     <mutation>
       <arg name="vendaId"/>
@@ -757,13 +757,38 @@
           </block>
         </value>
         <statement name="CATCH1">
-          <block colour="#5ba58c" dependencyby="@tSWOT-KtE(*q*d+n{Uk" id="aKVr]86/%IK|3244oPwU" origintype="text_print" output="false" tooltip="Imprime o texto, número ou valor especificado." type="text_print">
-            <value name="TEXT">
-              <shadow colour="#5ba593" dependencyby="@tSWOT-KtE(*q*d+n{Uk" id="^A#r~CaR|aYXth2lN)T2" origintype="text" output="true" tooltip="function () { [native code] }" type="text">
-                <field name="TEXT">abc</field>
+          <block colour="#487f7f" dependencyby="@tSWOT-KtE(*q*d+n{Uk" id="TaCms;QqQ1SG#HwRK[Zp" multilayer="false" namespace="cronapi.util.Operations.log" origintype="procedures_callnoreturn" output="false" returntype="ObjectType.VOID" tooltip="%3Cdiv%20class=%22name%22%3E%3Cstrong%3ENome:%3C/strong%3E%3Cdiv%3ELogar%3C/div%3E%3C/div%3E%3Cdiv%20class=%22description%22%3E%3Cstrong%3EDescri%C3%A7%C3%A3o:%3C/strong%3E%3Cdiv%3ELoga%20mensagens%20da%20aplica%C3%A7%C3%A3o%20de%20acordo%20com%20a%20configura%C3%A7%C3%A3o.%20Por%20padr%C3%A3o,%20loga-se%20na%20sa%C3%ADda%20do%20console.%3C/div%3E%3C/div%3E%3Cdiv%20class=%22params%22%3E%3Cstrong%3EParam%C3%AAtro:%3C/strong%3E%3Cdiv%3E%3Cspan%3E%20-%20Categoria%20:%20Texto%3C/span%3E%3Cdiv%3E%20Chave%20de%20refer%C3%AAncia%20dessa%20mensagem%20de%20log.%20Normalmente%20%C3%A9%20o%20nome%20do%20bloco.%3C/div%3E%3Cspan%3E%20-%20N%C3%ADvel%20de%20Log%20:%20Texto%3C/span%3E%3Cdiv%3E%20%C3%89%20o%20n%C3%ADvel%20de%20log%20que%20ser%C3%A1%20logado.%20Se%20estiver%20abaixo%20do%20determinado%20nas%20configura%C3%A7%C3%B5es,%20o%20sistema%20n%C3%A3o%20vai%20logar.%3C/div%3E%3Cspan%3E%20-%20Mensagem%20de%20log%20:%20Texto%3C/span%3E%3Cdiv%3E%20Texto%20que%20deseja%20logar.%3C/div%3E%3Cspan%3E%20-%20Detalhe%20de%20log%20:%20Objeto%3C/span%3E%3Cdiv%3E%20Pode%20ser%20um%20texto%20ou%20um%20objeto%20de%20exce%C3%A7%C3%A3o%20(erro).%3C/div%3E%3C/div%3E%3C/div%3E%3Cdiv%20class=%22link%22%3E%3Cstrong%3EAjuda:%3C/strong%3E%3Cdiv%20class=%22tooltip-link%22%3E%3Ca%20target=%22_blank%22%20href=%22https://docs.cronapp.io/display/CRON2/cronapi.util.Operations.log%22%3Ehttps://docs.cronapp.io/display/CRON2/cronapi.util.Operations.log%3C/a%3E%3C/div%3E%3C/div%3E" type="procedures_callnoreturn">
+            <mutation name="{{cronapi.util.Operations.log}}" return-raw-type="void">
+              <arg cronapi-raw-type="cronapi.Var" cronapi-type="ObjectType.STRING" name="Categoria"/>
+              <arg cronapi-raw-type="cronapi.Var" cronapi-type="ObjectType.STRING" name="Nível de Log"/>
+              <arg cronapi-raw-type="cronapi.Var" cronapi-type="ObjectType.STRING" name="Mensagem de log"/>
+              <arg cronapi-raw-type="cronapi.Var" cronapi-type="ObjectType.OBJECT" name="Detalhe de log"/>
+            </mutation>
+            <value name="ARG0">
+              <shadow colour="#5ba593" dependencyby="@tSWOT-KtE(*q*d+n{Uk" id="s/^VH,~k^yxNk!RJzo/C" origintype="text" output="true" tooltip="function () { [native code] }" type="text">
+                <field name="TEXT">General</field>
               </shadow>
-              <block colour="#0088ee" dependencyby="@tSWOT-KtE(*q*d+n{Uk" id="?vk+KIA;YLT{k2a47I+M" origintype="variables_get" output="true" tooltip="Retorna o valor desta variável." type="variables_get">
-                <field name="VAR">erro</field>
+            </value>
+            <value name="ARG1">
+              <block colour="#487f7f" dependencyby="@tSWOT-KtE(*q*d+n{Uk" id="/bfFKb.vzQ=9/_IK]U:t" origintype="util_dropdown" output="true" type="util_dropdown">
+                <mutation>
+                  <arg name="INFO" value="Informação"/>
+                  <arg name="SEVERE" value="Erro"/>
+                  <arg name="WARNING" value="Aviso"/>
+                  <arg name="CONFIG" value="Configuração"/>
+                  <arg name="FINE" value="Refinado Baixo"/>
+                  <arg name="FINER" value="Refinado Médio"/>
+                  <arg name="FINEST" value="Refinado Alto"/>
+                </mutation>
+                <field name="SELECT">SEVERE</field>
+              </block>
+            </value>
+            <value name="ARG2">
+              <shadow colour="#5ba593" dependencyby="@tSWOT-KtE(*q*d+n{Uk" id="t8|LFIW5.uf2D!;pgQx]" origintype="text" output="true" tooltip="function () { [native code] }" type="text">
+                <field name="TEXT"/>
+              </shadow>
+              <block colour="#5ba593" dependencyby="@tSWOT-KtE(*q*d+n{Uk" id="Xgq{aZ4=*e8`ox1r5c|Y" origintype="text" output="true" tooltip="function () { [native code] }" type="text">
+                <field name="TEXT">Erro ao tentar gerar o boleto</field>
               </block>
             </value>
             <next>
@@ -775,7 +800,7 @@
                     <field name="TEXT"/>
                   </shadow>
                   <block colour="#5ba593" dependencyby="@tSWOT-KtE(*q*d+n{Uk" id="|^^THG0*FF{eegkjsra6" origintype="text" output="true" tooltip="function () { [native code] }" type="text">
-                    <field name="TEXT">Erro ao gerar o boleto</field>
+                    <field name="TEXT">Erro ao tentar gerar o boleto</field>
                   </block>
                 </value>
               </block>

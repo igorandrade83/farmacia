@@ -66,8 +66,8 @@ public static Var salvarItens(Var listaItensPedido, Var clienteId, Var url) thro
 
         cronapi.util.Operations.log(
         Var.valueOf("General"),
-        Var.valueOf("INFO"),
-        Var.valueOf("Erro"), Var.VAR_NULL);
+        Var.valueOf("SEVERE"),
+        Var.valueOf("Erro ao tentar salvar pedido"), Var.VAR_NULL);
      }
     return resposta;
    }
