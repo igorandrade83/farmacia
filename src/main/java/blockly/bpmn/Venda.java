@@ -21,21 +21,16 @@ public static final int TIMEOUT = 300;
 public static Var aprovar(Var idVenda) throws Exception {
  return new Callable<Var>() {
 
-   private Var venda = Var.VAR_NULL;
    private Var exception = Var.VAR_NULL;
 
    public Var call() throws Exception {
 
     try {
 
-        venda =
-        cronapi.list.Operations.getLast((
-        cronapi.database.Operations.query(Var.valueOf("farmacia.entity.Venda"),Var.valueOf("select v from Venda v where v.id = :id"),Var.valueOf("id",idVenda))));
+        cronapi.database.Operations.execute(Var.valueOf("farmacia.entity.Venda"), Var.valueOf("update Venda set statusVenda = :statusVenda where id = :id"),Var.valueOf("statusVenda",
+        Var.valueOf(2)),Var.valueOf("id",idVenda));
 
-        cronapi.object.Operations.setObjectField(venda, Var.valueOf("statusVenda"),
-        Var.valueOf(2));
-
-        cronapi.database.Operations.update(Var.valueOf("farmacia.entity.Venda"),venda);
+        cronapi.database.Operations.commitTransaction(Var.valueOf("farmacia.entity.Venda"));
      } catch (Exception exception_exception) {
           exception = Var.valueOf(exception_exception);
 
@@ -66,6 +61,8 @@ public static Var reprovar(Var idVenda) throws Exception {
 
         cronapi.database.Operations.execute(Var.valueOf("farmacia.entity.Venda"), Var.valueOf("update Venda set statusVenda = :statusVenda where id = :id"),Var.valueOf("statusVenda",
         Var.valueOf(3)),Var.valueOf("id",idVenda));
+
+        cronapi.database.Operations.commitTransaction(Var.valueOf("farmacia.entity.Venda"));
      } catch (Exception exception_exception) {
           exception = Var.valueOf(exception_exception);
 
