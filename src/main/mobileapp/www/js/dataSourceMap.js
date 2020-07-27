@@ -17,7 +17,6 @@ window.dataSourceMap["app.Role"] = { customId: "app.entity.Role", serviceUrl: "a
 window.dataSourceMap["app.securables"] = { customId: "securables", serviceUrl: "api/cronapi/odata/v2/app/query421006/", serviceUrlODATA: "/api/cronapi/odata/v2/app/securables" };
 window.dataSourceMap["app.RoleSecurable"] = { customId: "app.entity.RoleSecurable", serviceUrl: "api/cronapi/crud/app.entity.RoleSecurable", serviceUrlODATA: "/api/cronapi/odata/v2/app/RoleSecurable" };
 window.dataSourceMap["app.userManager"] = { customId: "userManager", serviceUrl: "api/cronapi/odata/v2/app/userManager/", serviceUrlODATA: "/api/cronapi/odata/v2/app/userManager" };
-window.dataSourceMap["farmacia.query533349"] = { customId: "query533349", serviceUrl: "api/cronapi/odata/v2/app/query533349/", serviceUrlODATA: "/api/cronapi/odata/v2/farmacia/query533349" };
 window.dataSourceMap["app.userSecurables"] = { customId: "userSecurables", serviceUrl: "api/cronapi/odata/v2/app/userSecurables/", serviceUrlODATA: "/api/cronapi/odata/v2/app/userSecurables" };
 window.dataSourceMap["app.AuditLog"] = { customId: "app.entity.AuditLog", serviceUrl: "api/cronapi/crud/app.entity.AuditLog", serviceUrlODATA: "/api/cronapi/odata/v2/app/AuditLog" };
 window.dataSourceMap["farmacia.Pedido"] = { customId: "farmacia.entity.Pedido", serviceUrl: "api/cronapi/crud/farmacia.entity.Pedido", serviceUrlODATA: "/api/cronapi/odata/v2/farmacia/Pedido" };

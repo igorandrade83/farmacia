@@ -54,6 +54,7 @@ public static Var consultarDadosVenda(Var vendaId) throws Exception {
 public static void emitir(Var vendaId) throws Exception {
   new Callable<Var>() {
 
+   private Var retorno = Var.VAR_NULL;
    private Var dataAtual = Var.VAR_NULL;
    private Var mapa = Var.VAR_NULL;
    private Var cliente = Var.VAR_NULL;
@@ -79,70 +80,83 @@ public static void emitir(Var vendaId) throws Exception {
         cronapi.map.Operations.getMapField(mapa,
         Var.valueOf("venda"));
 
-        nomeArquivo =
-        Var.valueOf(
-        Var.valueOf("boleto_").toString() +
-        cronapi.dateTime.Operations.getNowInMilliseconds().toString());
+        retorno =
+        Var.valueOf(validar(
+        cronapi.object.Operations.getObjectField(venda,
+        Var.valueOf("statusVenda"))));
 
-        cronapi.io.Operations.startDownload(
-        paymentslip.PaymentSlip.generatePaymentSlipByteArray(
-        paymentslip.PaymentSlip.createInstanceOfPaymentSlip(
-        paymentslip.PaymentSlip.chooseBank(
-        Var.valueOf("BANCO_DO_BRASIL")),
-        paymentslip.PaymentSlip.defineDatesOfPaymentSlip(
-        paymentslip.PaymentSlip.createDatesOfPaymentSlip(
-        cronapi.dateTime.Operations.getDay(
-        cronapi.object.Operations.getObjectField(venda, Var.valueOf("data"))),
-        cronapi.dateTime.Operations.getMonth(
-        cronapi.object.Operations.getObjectField(venda, Var.valueOf("data"))),
-        cronapi.dateTime.Operations.getYear(
-        cronapi.object.Operations.getObjectField(venda, Var.valueOf("data")))),
-        paymentslip.PaymentSlip.createDatesOfPaymentSlip(
-        cronapi.dateTime.Operations.getDay(
-        cronapi.object.Operations.getObjectField(venda, Var.valueOf("data"))),
-        cronapi.dateTime.Operations.getMonth(
-        cronapi.object.Operations.getObjectField(venda, Var.valueOf("data"))),
-        cronapi.dateTime.Operations.getYear(
-        cronapi.object.Operations.getObjectField(venda, Var.valueOf("data")))),
-        paymentslip.PaymentSlip.createDatesOfPaymentSlip(
-        cronapi.dateTime.Operations.getDay(dataAtual),
-        cronapi.dateTime.Operations.getMonth(dataAtual),
-        cronapi.dateTime.Operations.getYear(dataAtual))),
-        paymentslip.PaymentSlip.createFavored(
-        Var.valueOf("Cronapp"),
-        Var.valueOf("1824"),
-        Var.valueOf("4"),
-        Var.valueOf("76000"),
-        Var.valueOf("5"),
-        Var.valueOf("1207113"),
-        Var.valueOf("18"),
-        paymentslip.PaymentSlip.createAddress(
-        Var.valueOf("Rua Prof. Leopoldo Amaral, n• 366"),
-        Var.valueOf("Pituba"),
-        Var.valueOf("41.830-494"),
-        Var.valueOf("Salvador"),
-        Var.valueOf("BA")),
-        Var.valueOf("9000206")),
-        paymentslip.PaymentSlip.createPayer(
-        cronapi.object.Operations.getObjectField(cliente, Var.valueOf("nome")),
-        cronapi.object.Operations.getObjectField(cliente, Var.valueOf("cpf")),
-        paymentslip.PaymentSlip.createAddress(
-        cronapi.object.Operations.getObjectField(cliente, Var.valueOf("endereco")),
-        cronapi.object.Operations.getObjectField(cliente, Var.valueOf("bairro")),
-        cronapi.object.Operations.getObjectField(cliente, Var.valueOf("cep")),
-        cronapi.object.Operations.getObjectField(cliente, Var.valueOf("cidade")),
-        cronapi.object.Operations.getObjectField(cliente, Var.valueOf("uf")))),
-        cronapi.object.Operations.getObjectField(venda, Var.valueOf("valor")),
-        Var.valueOf("1234"),
-        cronapi.list.Operations.newList(
-        Var.valueOf("Efetuar o pagamento até a data do vencimento"),
-        Var.valueOf("Após o vencimento multa de 0.05 ao mês")),
-        cronapi.list.Operations.newList(
-        Var.valueOf("Somente no Cronapp Bank"))),
-        Var.valueOf("PDF")),
-        Var.valueOf(
-        nomeArquivo.toString() +
-        Var.valueOf(".pdf").toString()));
+        if (
+        Var.valueOf(!retorno.equals(
+        Var.VAR_NULL)).getObjectAsBoolean()) {
+
+            cronapi.util.Operations.callClientFunction( Var.valueOf("cronapi.screen.notify"), Var.valueOf("error"), retorno);
+        } else {
+
+            nomeArquivo =
+            Var.valueOf(
+            Var.valueOf("boleto_").toString() +
+            cronapi.dateTime.Operations.getNowInMilliseconds().toString());
+
+            cronapi.io.Operations.startDownload(
+            paymentslip.PaymentSlip.generatePaymentSlipByteArray(
+            paymentslip.PaymentSlip.createInstanceOfPaymentSlip(
+            paymentslip.PaymentSlip.chooseBank(
+            Var.valueOf("BANCO_DO_BRASIL")),
+            paymentslip.PaymentSlip.defineDatesOfPaymentSlip(
+            paymentslip.PaymentSlip.createDatesOfPaymentSlip(
+            cronapi.dateTime.Operations.getDay(
+            cronapi.object.Operations.getObjectField(venda, Var.valueOf("data"))),
+            cronapi.dateTime.Operations.getMonth(
+            cronapi.object.Operations.getObjectField(venda, Var.valueOf("data"))),
+            cronapi.dateTime.Operations.getYear(
+            cronapi.object.Operations.getObjectField(venda, Var.valueOf("data")))),
+            paymentslip.PaymentSlip.createDatesOfPaymentSlip(
+            cronapi.dateTime.Operations.getDay(
+            cronapi.object.Operations.getObjectField(venda, Var.valueOf("data"))),
+            cronapi.dateTime.Operations.getMonth(
+            cronapi.object.Operations.getObjectField(venda, Var.valueOf("data"))),
+            cronapi.dateTime.Operations.getYear(
+            cronapi.object.Operations.getObjectField(venda, Var.valueOf("data")))),
+            paymentslip.PaymentSlip.createDatesOfPaymentSlip(
+            cronapi.dateTime.Operations.getDay(dataAtual),
+            cronapi.dateTime.Operations.getMonth(dataAtual),
+            cronapi.dateTime.Operations.getYear(dataAtual))),
+            paymentslip.PaymentSlip.createFavored(
+            Var.valueOf("Cronapp"),
+            Var.valueOf("1824"),
+            Var.valueOf("4"),
+            Var.valueOf("76000"),
+            Var.valueOf("5"),
+            Var.valueOf("1207113"),
+            Var.valueOf("18"),
+            paymentslip.PaymentSlip.createAddress(
+            Var.valueOf("Rua Prof. Leopoldo Amaral, n• 366"),
+            Var.valueOf("Pituba"),
+            Var.valueOf("41.830-494"),
+            Var.valueOf("Salvador"),
+            Var.valueOf("BA")),
+            Var.valueOf("9000206")),
+            paymentslip.PaymentSlip.createPayer(
+            cronapi.object.Operations.getObjectField(cliente, Var.valueOf("nome")),
+            cronapi.object.Operations.getObjectField(cliente, Var.valueOf("cpf")),
+            paymentslip.PaymentSlip.createAddress(
+            cronapi.object.Operations.getObjectField(cliente, Var.valueOf("endereco")),
+            cronapi.object.Operations.getObjectField(cliente, Var.valueOf("bairro")),
+            cronapi.object.Operations.getObjectField(cliente, Var.valueOf("cep")),
+            cronapi.object.Operations.getObjectField(cliente, Var.valueOf("cidade")),
+            cronapi.object.Operations.getObjectField(cliente, Var.valueOf("uf")))),
+            cronapi.object.Operations.getObjectField(venda, Var.valueOf("valor")),
+            Var.valueOf("1234"),
+            cronapi.list.Operations.newList(
+            Var.valueOf("Efetuar o pagamento até a data do vencimento"),
+            Var.valueOf("Após o vencimento multa de 0.05 ao mês")),
+            cronapi.list.Operations.newList(
+            Var.valueOf("Somente no Cronapp Bank"))),
+            Var.valueOf("PDF")),
+            Var.valueOf(
+            nomeArquivo.toString() +
+            Var.valueOf(".pdf").toString()));
+        }
      } catch (Exception erro_exception) {
           erro = Var.valueOf(erro_exception);
 
@@ -155,6 +169,35 @@ public static void emitir(Var vendaId) throws Exception {
         Var.valueOf("Erro ao tentar gerar o boleto"));
      }
    return Var.VAR_NULL;
+   }
+ }.call();
+}
+
+/**
+ *
+ * @param status
+ * @return Var
+ */
+// Descreva esta função...
+public static Var validar(Var status) throws Exception {
+ return new Callable<Var>() {
+
+   private Var retorno = Var.VAR_NULL;
+
+   public Var call() throws Exception {
+
+    retorno =
+    Var.VAR_NULL;
+
+    if (
+    Var.valueOf(!
+    cronapi.object.Operations.getObjectField(status, Var.valueOf("id")).equals(
+    Var.valueOf(2))).getObjectAsBoolean()) {
+
+        retorno =
+        cronapi.object.Operations.getObjectField(status, Var.valueOf("descricao"));
+    }
+    return retorno;
    }
  }.call();
 }
