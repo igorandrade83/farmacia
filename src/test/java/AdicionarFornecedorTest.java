@@ -21,7 +21,7 @@ import org.openqa.selenium.Keys;
 import java.util.*;
 import java.net.MalformedURLException;
 import java.net.URL;
-public class CriarMarcaTest {
+public class AdicionarFornecedorTest {
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
@@ -39,25 +39,29 @@ public class CriarMarcaTest {
     driver.quit();
   }
   @Test
-  public void criarMarca() {
-    driver.get("https://app-13-74-22129.ide.cronapp.io/#/home");
-    driver.manage().window().setSize(new Dimension(958, 1039));
+  public void login() {
+    driver.get("https://app-13-106-47405.ide.cronapp.io/");
+    driver.manage().window().setSize(new Dimension(974, 555));
+    driver.findElement(By.id("input7274")).click();
+    driver.findElement(By.id("input7274")).sendKeys("admin");
+    driver.findElement(By.id("input9836")).sendKeys("admin");
+    driver.findElement(By.cssSelector(".k-button")).click();
+  }
+  @Test
+  public void criarForncedor() {
+    driver.get("https://app-13-106-47405.ide.cronapp.io/#/home");
+    driver.manage().window().setSize(new Dimension(1153, 656));
     driver.findElement(By.cssSelector(".dropdown:nth-child(6) > .dropdown-toggle > span:nth-child(1)")).click();
-    driver.findElement(By.cssSelector(".dropdown-menu > li:nth-child(1) span:nth-child(1)")).click();
-    driver.findElement(By.cssSelector(".k-grid-add")).click();
-    driver.findElement(By.id("f8fe")).click();
-    driver.findElement(By.id("f8fe")).sendKeys("Alimentos");
-    driver.findElement(By.cssSelector(".k-primary")).click();
-    {
-      WebElement element = driver.findElement(By.cssSelector(".k-alt:nth-child(4) .k-grid-delete"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    {
-      WebElement element = driver.findElement(By.tagName("body"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element, 0, 0).perform();
-    }
-    driver.findElement(By.id("fd81")).click();
+    driver.findElement(By.cssSelector(".dropdown-menu > li:nth-child(3) span:nth-child(1)")).click();
+    driver.findElement(By.cssSelector("#bc75 > .k-icon")).click();
+    driver.findElement(By.id("textinput-cnpj")).click();
+    driver.findElement(By.id("textinput-cnpj")).sendKeys("50.737.766/0002-02");
+    driver.findElement(By.id("textinput-nome")).click();
+    driver.findElement(By.id("textinput-nome")).sendKeys("Techne Engenharia e Sistemas LTDA");
+    driver.findElement(By.id("textinput-telefone")).click();
+    driver.findElement(By.id("textinput-telefone")).sendKeys("(71) 99999-9999");
+    driver.findElement(By.id("textinput-email")).click();
+    driver.findElement(By.id("textinput-email")).sendKeys("techne@teste.com");
+    driver.findElement(By.id("btn_crud_post41107")).click();
   }
 }
