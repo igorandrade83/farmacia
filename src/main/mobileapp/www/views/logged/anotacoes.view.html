@@ -1,0 +1,44 @@
+<div id="starter" ng-init="cronapi.client('js.blockly.Anotacao.inicializar').run()" ng-destroy="" data-component="crn-start" screen-params=""> 
+  <ion-view cache-view="false" hide-back-button="true" role="region" class="pane"> 
+    <ion-header-bar role="heading" class="bar bar-header bar-positive" xattr-theme="bar-positive" data-component="crn-ion-header-bar"> 
+      <div side="left" class="buttons buttons-left header-item"> 
+        <button aria-labelledby="left_navicon_sr" class="button button-clear" ng-if="!Categoria.inserting &amp;&amp; !Categoria.editing" menu-toggle="left" data-component="crn-button" xattr-type="button-clear"> <i class="icon ion-navicon"></i> <span id="left_navicon_sr" class="sr-only">{{'Accessibility.Button.Aria.Label.NavIcon' | translate}}</span> </button> 
+        <button aria-labelledby="left_arrowback_sr" class="button button-clear" ng-if="Categoria.inserting || Categoria.editing" ng-click="Categoria.cancel()" data-component="crn-button" xattr-type="button-clear"> <i class="icon ion-ios-arrow-back"></i> <span id="left_arrowback_sr" class="sr-only">{{'Roles.view.Voltar' | translate}}</span> </button> 
+      </div> 
+      <h1 class="title">{{'Anotacoes' | translate}}</h1> 
+      <div side="right" class="buttons buttons-right header-item"> 
+        <button aria-labelledby="right_plus_sr" class="button button-clear" data-component="crn-button" xattr-type="button-clear" ng-click="cronapi.client('js.blockly.Anotacao.inserir').run(vars.nome)"> <i class="icon ion-ios-plus-empty"></i> <span id="right_plus_sr" class="sr-only">{{'Accessibility.Button.Aria.Label.Add' | translate}}</span> </button> 
+        <button aria-labelledby="right_checkmark_sr" class="button button-clear" ng-click="cronapi.client('js.blockly.Anotacao.sincronizar').run()" data-component="crn-button" xattr-type="button-clear"> <i class="icon ion-ios-refresh"></i> <span id="right_checkmark_sr" class="sr-only">{{'Accessibility.Button.Aria.Label.Save' | translate}}</span> </button> 
+      </div> 
+    </ion-header-bar> 
+    <ion-content data-component="crn-ion-content" class="has-header"> 
+      <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-datasource" id="crn-datasource-906854"> 
+      </div> 
+      <div> 
+      </div> 
+      <div> 
+        <form> 
+          <div class="list"> 
+            <!-- nome begin --> 
+            <label for="textinput-nome-23224" class="item item-input item-stacked-label" data-component="crn-input-floating"> <span class="input-label">{{'Nome' | translate}}</span> <input type="text" placeholder="Nome" ng-model="vars.nome" id="textinput-nome-23224" name="textinput-nome" mask="" required=""> </label> 
+            <ion-list> 
+              <ion-item class="item component-holder" id="crn-item-swipe-527465" data-component="crn-item-swipe" ng-repeat="rowData in vars.listaAnotacoes" ng-hide="rowData.exclusao"> 
+                <h2 style="display: inline">{{rowData.nome}}</h2> 
+                <div id="crn-item-options7030" class="component-holder" data-component="crn-item-options"> 
+                  <div class="crn-item-options" data-item="true"> 
+                    <ion-option-button id="crn-option-button7030-2" data-component="crn-button" class="button-assertive button" ng-click="cronapi.client('js.blockly.Anotacao.excluir').run(rowData)"> 
+                      <i class="ion ion-trash-a"></i> 
+                      <span>Delete</span> 
+                    </ion-option-button> 
+                  </div> 
+                </div> 
+              </ion-item> 
+            </ion-list> 
+            <!-- NtoN  --> 
+            <!-- NtoN  end--> 
+          </div> 
+        </form> 
+      </div> 
+    </ion-content> 
+  </ion-view> 
+</div>

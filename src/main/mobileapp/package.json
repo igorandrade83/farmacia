@@ -8,5 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "CronApp IDE",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "dependencies": {
+    "cronapi-pouchdb": "^1.1.0"
+  }
 }

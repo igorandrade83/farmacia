@@ -408,49 +408,50 @@
         }
       }])
 
-      /**
-       * Validação de campos CPF e CNPJ,
-       * para utilizar essa diretiva, adicione o atributo valid com o valor
-       * do tipo da validação (cpf ou cnpj). Exemplo <input type="text" valid="cpf">
-       */
-      .directive('valid', function() {
-        return {
-          require: '?ngModel',
-          restrict: 'A',
-          link: function(scope, element, attrs, ngModel) {
-            var validator = {
-              'cpf': CPF,
-              'cnpj': CNPJ
-            };
-
-            if (ngModel) {
-              ngModel.$validators[attrs.valid] = function(modelValue, viewValue) {
-                var value = modelValue || viewValue;
-                var fieldValid = validator[attrs.valid].isValid(value);
-                if (!fieldValid && value !== null) {
-                  element.scope().$applyAsync(function(){ element[0].setCustomValidity(element[0].dataset['errorMessage']); }) ;
-                } else {
-                  element[0].setCustomValidity("");
-                }
-                return (fieldValid || !value);
+        /**
+         * Validação de campos CPF e CNPJ,
+         * para utilizar essa diretiva, adicione o atributo valid com o valor
+         * do tipo da validação (cpf ou cnpj). Exemplo <input type="text" valid="cpf">
+         */
+        .directive('valid', function() {
+          return {
+            require: '?ngModel',
+            restrict: 'A',
+            link: function(scope, element, attrs, ngModel) {
+              var validator = {
+                'cpf': CPF,
+                'cnpj': CNPJ
               };
-            } else {
-              let validate = function() {
-                setTimeout(()=>{
-                  var value = element.data('rawvalue');
+
+              if (ngModel) {
+                ngModel.$validators[attrs.valid] = function(modelValue, viewValue) {
+                  var value = modelValue || viewValue;
                   var fieldValid = validator[attrs.valid].isValid(value);
                   if (!fieldValid && value !== null) {
-                    element.addClass('k-invalid');
+                    element.scope().$applyAsync(function(){ element[0].setCustomValidity(element[0].dataset['errorMessage']); }) ;
                   } else {
-                    element.removeClass('k-invalid');
+                    element[0].setCustomValidity("");
                   }
-                })
-              };
-              element.on('keydown', validate).on('keyup', validate);
+                  return (fieldValid || !value);
+                };
+              } else {
+                 let validate = function() {
+                   setTimeout(()=>{
+                      var value = element.data('rawvalue');
+                      var fieldValid = validator[attrs.valid].isValid(value);
+                      if (!fieldValid && value !== null) {
+                        element.addClass('k-invalid');
+                      } else {
+                        element[0].setCustomValidity("");
+                      }
+                   })
+                  };
+                  element.on('keydown', validate).on('keyup', validate);
+              }
+
             }
           }
-        }
-      })
+        })
 
       .directive('cronappSecurity', function($rootScope) {
         return {
@@ -3370,7 +3371,10 @@
                                   var found = _goTo(_scope, _combobox, data);
                                   if (!found) {
                                     _dataSource.data.push(data);
-                                    _goTo(_scope, _combobox, data);
+                                    found = _goTo(_scope, _combobox, data);
+                                  }
+                                  if (found) {
+                                   modelSetter(_scope, found[select.dataValueField]);
                                   }
                                 } else {
                                   modelSetter(_scope, null);
@@ -3472,6 +3476,9 @@
              */
 
             var defineInitialValue = function() {
+              if (combobox.definingInitialValue) {
+                return;
+              }
               if (!combobox.isEvaluating) {
                 var currentValue = combobox.value();
                 var nextValue = null;
@@ -3489,14 +3496,34 @@
 
 
                   if (nextValue == null && select.firstValue) {
-                    if (dataSourceScreen && dataSourceScreen.data.length) {
-                      nextValue = dataSourceScreen.data[0][select.dataValueField];
+                    if (dataSourceScreen) {
+                      combobox.definingInitialValue = true;
+                      dataSourceScreen.fetch({
+                        params: {
+                          $top: 1
+                          }
+                      }, {
+                        success: function(data) {
+                          if (data.length) {
+                            dataSourceScreen.data.push(data[0]);
+                            nextValue = data[0][select.dataValueField];
+                          }
+                          modelSetter(_scope, nextValue);
+                          forceChangeModel(nextValue);
+                          combobox.definingInitialValue = false;
+                        },
+                        error: function() {
+                          combobox.definingInitialValue = false;
+                        },
+                        canceled: function() {
+                          combobox.definingInitialValue = false;
+                        }
+                      }, undefined, {lookup : true});
                     }
-                  }
-
-                  if(ngModelCtrl.$modelValue != currentValue) {
+                  } else {
                     modelSetter(_scope, nextValue);
                     forceChangeModel(nextValue);
+                    combobox.definingInitialValue = false;
                   }
                 }
               }
@@ -3508,24 +3535,11 @@
             var _ngModelCtrl = ngModelCtrl;
             if (dataSourceScreen != null && dataSourceScreen != undefined) {
               dataSourceScreen.addDataSourceEvents({
-                refresh: function() {
+                overRideRefresh: function() {
+                  dataSourceScreen.fetched = false;
+                  dataSourceScreen.cleanup();
                   defineInitialValue();
-                },
-                read: function(data) {
-
-                  var fromCombo = combobox.options.fromCombo;
-                  combobox.options.fromCombo = false;
-                  if (!fromCombo) {
-                    combobox.options.readData = data;
-                    this.dataSource.read();
-
-
-                    if (combobox.options.lazyFirstValue) {
-                      combobox.options.lazyFirstValue = false;
-                      defineInitialValue();
-                    }
-                  }
-                }.bind(combobox)
+                }
               });
             }
 
@@ -3615,11 +3629,7 @@
                 combobox.options.lazyFirstInitialValue = true;
               }
               else if (select.firstValue) {
-                combobox.options.lazyFirstValue = true;
-
-                if (dataSourceScreen.lazy && !dataSourceScreen.fetched) {
-                  dataSourceScreen.fetch({});
-                }
+                defineInitialValue();
               }
 
             }
@@ -3678,7 +3688,7 @@
             var parent = element.parent();
             var id = attrs.id ? ' id="' + attrs.id + '"' : '';
             var name = attrs.name ? ' name="' + attrs.name + '"' : '';
-            $(parent).append('<div style="width: 100%;"> <input style="width: 100%;"' + id + name + ' class="cronMultiSelect" ng-model="' + attrs.ngModel + '"/> </div>');
+            $(parent).append('<label for="' + attrs.id + '" style="width: 100%;"> <input style="width: 100%;"' + id + name + ' class="cronMultiSelect" ng-model="' + attrs.ngModel + '"/> </label');
             var $element = $(parent).find('input.cronMultiSelect');
             $(element).remove();
 
@@ -5476,6 +5486,9 @@ app.kendoHelper = {
       cronappDatasource.fetch(fetchData, {
             success:  function(data) {
               if (e.success) {
+                if (self.options.combobox) {
+                  self.options.combobox.options.expanded = true;
+                }
                 e.success(data);
                 if (self.options && self.options.combobox && self.options.combobox.element[0].id) {
                   var expToFind = " .k-animation-container";

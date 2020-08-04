@@ -58,7 +58,7 @@ public class Produto implements Serializable {
     /**
     * @generated
     */
-    @Column(name = "precoVenda", nullable = false, unique = false, insertable=true, updatable=true)
+    @Column(name = "precoVenda", nullable = false, unique = false, precision=10, scale=2, insertable=true, updatable=true)
         
         private java.lang.Double precoVenda;
 
@@ -92,6 +92,13 @@ public class Produto implements Serializable {
     @JoinColumn(name="marca", nullable = false, referencedColumnName = "id", insertable=true, updatable=true)
         
         private Marca marca;
+
+    /**
+    * @generated
+    */
+    @Column(name = "controlado", nullable = false, unique = false, insertable=true, updatable=true)
+        
+        private java.lang.Boolean controlado = false;
 
     /**
     * Construtor
@@ -269,6 +276,25 @@ public class Produto implements Serializable {
     */
     public Produto setMarca(Marca marca){
         this.marca = marca;
+        return this;
+    }
+    /**
+    * Obtém controlado
+    * return controlado
+    * @generated
+    */
+    
+    public java.lang.Boolean getControlado(){
+        return this.controlado;
+    }
+
+    /**
+    * Define controlado
+    * @param controlado controlado
+    * @generated
+    */
+    public Produto setControlado(java.lang.Boolean controlado){
+        this.controlado = controlado;
         return this;
     }
 

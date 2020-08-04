@@ -100,5 +100,51 @@ public static Var Normalize(Var Entidade) throws Exception {
  }.call();
 }
 
+/**
+ *
+ * @return Var
+ */
+// Descreva esta função...
+public static Var obterIdUsuario() throws Exception {
+ return new Callable<Var>() {
+
+   private Var identificador = Var.VAR_NULL;
+   private Var item = Var.VAR_NULL;
+
+   public Var call() throws Exception {
+    identificador = Var.VAR_NULL;
+    try {
+         identificador = cronapi.database.Operations.getField(cronapi.database.Operations.query(Var.valueOf("app.entity.User"),Var.valueOf("select u.id from User u where u.userName = :userName"),Var.valueOf("userName",cronapi.util.Operations.getCurrentUserName())), Var.valueOf("this[0]"));
+     } catch (Exception item_exception) {
+          item = Var.valueOf(item_exception);
+         System.out.println(item.getObjectAsString());
+     }
+    return identificador;
+   }
+ }.call();
+}
+
+/**
+ *
+ * @return Var
+ */
+// Descreva esta função...
+public static Var obterLoginUsuario() throws Exception {
+ return new Callable<Var>() {
+
+   private Var Entidade = Var.VAR_NULL;
+   private Var userName = Var.VAR_NULL;
+   private Var email = Var.VAR_NULL;
+   private Var ENCRYPT = Var.VAR_NULL;
+   private Var password = Var.VAR_NULL;
+   private Var identificador = Var.VAR_NULL;
+   private Var item = Var.VAR_NULL;
+
+   public Var call() throws Exception {
+    return cronapi.util.Operations.getCurrentUserName();
+   }
+ }.call();
+}
+
 }
 

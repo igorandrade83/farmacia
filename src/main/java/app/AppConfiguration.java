@@ -24,8 +24,6 @@ import java.util.regex.Pattern;
 )
 class AppConfiguration {
 
-    @Primary
-
     @Bean(name="app-EntityManagerFactory")
     public LocalEntityManagerFactoryBean entityManagerFactory() {
         LocalEntityManagerFactoryBean factoryBean = new LocalEntityManagerFactoryBean();
@@ -33,7 +31,7 @@ class AppConfiguration {
         return factoryBean;
     }
 
-    @Bean(name = "app-TransactionManager")
+    @Primary @Bean(name = "app-TransactionManager")
     public PlatformTransactionManager transactionManager() {
         return new JpaTransactionManager(entityManagerFactory().getObject());
     }

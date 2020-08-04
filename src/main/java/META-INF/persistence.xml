@@ -1,22 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-    <persistence-unit name="farmacia" transaction-type="RESOURCE_LOCAL">
-        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-        <non-jta-data-source>java:comp/env/jdbc/main</non-jta-data-source>
-        <class>farmacia.entity.Cliente</class>
-        <class>farmacia.entity.Fornecedor</class>
-        <class>farmacia.entity.Pedido</class>
-        <class>farmacia.entity.ClienteVenda</class>
-        <class>farmacia.entity.Produto</class>
-        <class>farmacia.entity.Venda</class>
-        <class>farmacia.entity.Categoria</class>
-        <class>farmacia.entity.Marca</class>
-        <properties>
-            <property name="eclipselink.ddl-generation" value="create-or-extend-tables"/>
-            <property name="eclipselink.cache.shared.default" value="false"/>
-            <property name="eclipselink.query-results-cache" value="false"/>
-        </properties>
-    </persistence-unit>
     <persistence-unit name="app" transaction-type="RESOURCE_LOCAL">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
         <non-jta-data-source>java:comp/env/jdbc/main</non-jta-data-source>
@@ -25,6 +8,7 @@
         <class>app.entity.UserSecurable</class>
         <class>app.entity.UserRole</class>
         <class>app.entity.User</class>
+        <class>app.entity.Anotacao</class>
         <class>app.entity.Device</class>
         <class>app.entity.Role</class>
         <class>app.entity.AuditLog</class>
@@ -32,6 +16,24 @@
         <class>app.entity.View</class>
         <properties>
             <property name="eclipselink.ddl-generation" value="create-or-extend-tables"/>
+            <property name="eclipselink.cache.shared.default" value="false"/>
+            <property name="eclipselink.query-results-cache" value="false"/>
+        </properties>
+    </persistence-unit>
+    <persistence-unit name="farmacia" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <non-jta-data-source>java:comp/env/jdbc/main</non-jta-data-source>
+        <class>farmacia.entity.Cliente</class>
+        <class>farmacia.entity.Fornecedor</class>
+        <class>farmacia.entity.Pedido</class>
+        <class>farmacia.entity.StatusVenda</class>
+        <class>farmacia.entity.ClienteVenda</class>
+        <class>farmacia.entity.Produto</class>
+        <class>farmacia.entity.Venda</class>
+        <class>farmacia.entity.Categoria</class>
+        <class>farmacia.entity.Marca</class>
+        <properties>
+            <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
             <property name="eclipselink.cache.shared.default" value="false"/>
             <property name="eclipselink.query-results-cache" value="false"/>
         </properties>

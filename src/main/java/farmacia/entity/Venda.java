@@ -50,6 +50,14 @@ public class Venda implements Serializable {
         private java.util.Date data = Calendar.getInstance().getTime();
 
     /**
+    * @generated
+    */
+    @ManyToOne
+    @JoinColumn(name="fk_statusVenda", nullable = true, referencedColumnName = "id", insertable=true, updatable=true)
+        
+        private StatusVenda statusVenda;
+
+    /**
     * Construtor
     * @generated
     */
@@ -111,6 +119,25 @@ public class Venda implements Serializable {
     */
     public Venda setData(java.util.Date data){
         this.data = data;
+        return this;
+    }
+    /**
+    * Obtém statusVenda
+    * return statusVenda
+    * @generated
+    */
+    
+    public StatusVenda getStatusVenda(){
+        return this.statusVenda;
+    }
+
+    /**
+    * Define statusVenda
+    * @param statusVenda statusVenda
+    * @generated
+    */
+    public Venda setStatusVenda(StatusVenda statusVenda){
+        this.statusVenda = statusVenda;
         return this;
     }
 

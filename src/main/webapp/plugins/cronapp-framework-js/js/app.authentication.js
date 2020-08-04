@@ -208,7 +208,6 @@ var app = (function() {
         );
 
         var locale = (window.navigator.userLanguage || window.navigator.language || 'pt_br').replace('-', '_');
-        locale = locale === 'pt_br' || locale === 'en_us' ? locale : 'pt_br';
 
         $translateProvider.use(locale.toLowerCase());
         $translateProvider.useSanitizeValueStrategy('escaped');
@@ -333,7 +332,7 @@ var app = (function() {
           $rootScope.$on('$stateChangeError', function() {
               if (arguments.length >= 6) {
                   var requestObj = arguments[5];
-                  if (requestObj.status === 404 || requestObj.status === 403) {
+                  if (requestObj.status === 404 || requestObj.status === 403 || requestObj.status === 401) {
                       localStorage.removeItem('_u');
                       $state.go('login');
                   }
