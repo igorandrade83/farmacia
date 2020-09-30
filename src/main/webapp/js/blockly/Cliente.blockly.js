@@ -6,7 +6,7 @@ window.blockly.js.blockly.Cliente = window.blockly.js.blockly.Cliente || {};
 /**
  * Cliente
  */
-window.blockly.js.blockly.Cliente.getCep = function(cep) {
+window.blockly.js.blockly.Cliente.getCep = async function(cep) {
  var item, resposta;
   this.cronapi.util.getCEP(cep, function(sender_resposta) {
       resposta = sender_resposta;

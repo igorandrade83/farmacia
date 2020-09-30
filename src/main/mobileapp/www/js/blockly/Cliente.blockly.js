@@ -6,9 +6,9 @@ window.blockly.js.blockly.Cliente = window.blockly.js.blockly.Cliente || {};
 /**
  * Cliente
  */
-window.blockly.js.blockly.Cliente.getCep = function(cep) {
+window.blockly.js.blockly.Cliente.getCep = async function(cep) {
  var item, resposta;
-  this.cronapi.util.getCEP(cep, function(sender_resposta) {
+  this.cronapi.util.getCEP(cep, async function(sender_resposta) {
       resposta = sender_resposta;
     if (!this.cronapi.object.getObjectField(resposta, 'erro')) {
       this.cronapi.screen.changeValueOfField("Cliente.active.bairro", this.cronapi.object.getObjectField(resposta, 'bairro'));

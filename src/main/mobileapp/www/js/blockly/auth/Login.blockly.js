@@ -7,14 +7,14 @@ window.blockly.js.blockly.auth.Login = window.blockly.js.blockly.auth.Login || {
 /**
  * Login
  */
-window.blockly.js.blockly.auth.Login.login = function(login, password, options) {
+window.blockly.js.blockly.auth.Login.login = async function(login, password, options) {
  var item;
   if (!this.cronapi.logic.isNullOrEmpty(this.cronapi.screen.getHostapp())) {
-    this.cronapi.util.getURLFromOthers('POST', 'application/x-www-form-urlencoded', String(this.cronapi.screen.getHostapp()) + String('auth'), this.cronapi.object.createObjectLoginFromString(login, password), null, function(sender_item) {
+    this.cronapi.util.getURLFromOthers('POST', 'application/x-www-form-urlencoded', String(this.cronapi.screen.getHostapp()) + String('auth'), this.cronapi.object.createObjectLoginFromString(login, password), null, async function(sender_item) {
         item = sender_item;
       this.cronapi.util.setLocalStorage('_u', this.cronapi.object.serializeObject(item));
       this.cronapi.screen.changeView("#/app/logged/home",[  ]);
-    }.bind(this), function(sender_item) {
+    }.bind(this), async function(sender_item) {
         item = sender_item;
       if (this.cronapi.object.getProperty(item, 'status') == '403' || this.cronapi.object.getProperty(item, 'status') == '401') {
         this.cronapi.screen.notify('error',this.cronapi.i18n.translate("Login.view.invalidPassword",[  ]));

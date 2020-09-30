@@ -6,7 +6,7 @@ window.blockly.js.blockly.MutualAuth = window.blockly.js.blockly.MutualAuth || {
 /**
  * Descreva esta função...
  */
-window.blockly.js.blockly.MutualAuth.signup = function() {
+window.blockly.js.blockly.MutualAuth.signup = async function() {
  var item;
   this.cronapi.util.getURLFromOthers('POST', 'application/x-www-form-urlencoded', String(this.cronapi.util.getBaseUrl()) + String('/mutual/register'), this.cronapi.object.createObjectFromString(['{ \"token\": \"',this.cronapi.util.getUserToken(),'\" } '].join('')), null, function(sender_item) {
       item = sender_item;
@@ -20,7 +20,7 @@ window.blockly.js.blockly.MutualAuth.signup = function() {
 /**
  * MutualAuth
  */
-window.blockly.js.blockly.MutualAuth.login = function() {
+window.blockly.js.blockly.MutualAuth.login = async function() {
  var item;
   this.cronapi.util.getURLFromOthers('POST', 'application/x-www-form-urlencoded', String(this.cronapi.util.getBaseUrl()) + String('/mutual/login'), null, null, function(sender_item) {
       item = sender_item;

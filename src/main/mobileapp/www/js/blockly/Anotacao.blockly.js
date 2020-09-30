@@ -6,55 +6,35 @@ window.blockly.js.blockly.Anotacao = window.blockly.js.blockly.Anotacao || {};
 /**
  * Descreva esta função...
  */
-window.blockly.js.blockly.Anotacao.excluir = function(anotacao) {
+window.blockly.js.blockly.Anotacao.excluir = async function(anotacao) {
  var item, banco, nome, anotacoes, k, bd, j, lista;
-
-  this.cronapi.json.setProperty(anotacao,
-  'exclusao',
-  true);
-
-  this.cronapi.json.deleteProperty(anotacao,
-  '$$hashKey');
-
-  this.cronapi.pouchdb.updateDoc(
-  this.blockly.js.blockly.Anotacao.criarBancoLocal(), anotacao, null, function(sender_item) {
+  this.cronapi.json.setProperty(anotacao, 'exclusao', true);
+  this.cronapi.json.deleteProperty(anotacao, '$$hashKey');
+  this.cronapi.pouchdb.updateDoc(await this.blockly.js.blockly.Anotacao.criarBancoLocal(), anotacao, null, async function(sender_item) {
       item = sender_item;
-
-    this.cronapi.screen.notify('success',
-    'Erro ao excluir anotação');
-  }.bind(this), function(sender_item) {
+    this.cronapi.screen.notify('success','Erro ao excluir anotação');
+  }.bind(this), async function(sender_item) {
       item = sender_item;
-
-    this.blockly.js.blockly.Anotacao.obter();
+    await this.blockly.js.blockly.Anotacao.obter();
   }.bind(this));
 }
 
 /**
  * Descreva esta função...
  */
-window.blockly.js.blockly.Anotacao.criarBancoLocal = function() {
+window.blockly.js.blockly.Anotacao.criarBancoLocal = async function() {
  var item, anotacao, banco, nome, anotacoes, k, bd, j, lista;
-
-  this.cronapi.screen.createScopeVariable(
-  'listaAnotacoes',
-  []);
-  return
-this.cronapi.pouchdb.createLocalDatabase(
-'anotacoes',
-'idb');
+  this.cronapi.screen.createScopeVariable('listaAnotacoes', []);
+  return this.cronapi.pouchdb.createLocalDatabase('anotacoes', 'idb');
 }
 
 /**
  * Descreva esta função...
  */
-window.blockly.js.blockly.Anotacao.inicializar = function() {
+window.blockly.js.blockly.Anotacao.inicializar = async function() {
  var item, anotacao, banco, nome, anotacoes, k, bd, j, lista;
-
-  this.cronapi.screen.createScopeVariable(
-  'listaAnotacoes',
-  []);
-
-  this.blockly.js.blockly.Anotacao.sincronizar();
+  this.cronapi.screen.createScopeVariable('listaAnotacoes', []);
+  await this.blockly.js.blockly.Anotacao.sincronizar();
 }
 
 function mathRandomInt(a, b) {
@@ -70,58 +50,35 @@ function mathRandomInt(a, b) {
 /**
  * Descreva esta função...
  */
-window.blockly.js.blockly.Anotacao.inserir = function(nome) {
+window.blockly.js.blockly.Anotacao.inserir = async function(nome) {
  var item, anotacao, banco, anotacoes, k, bd, j, lista;
-
-  banco =
-  this.blockly.js.blockly.Anotacao.criarBancoLocal();
-
-  anotacao =
-  this.cronapi.object.newObject({name: 'nome', value: nome});
-
-  this.cronapi.object.setProperty(anotacao,
-  '_id',
-  String(
-  mathRandomInt(
-  1,
-  100000)));
-
-  this.cronapi.pouchdb.createDoc(banco, anotacao, null, function(sender_item) {
+  banco = await this.blockly.js.blockly.Anotacao.criarBancoLocal();
+  anotacao = this.cronapi.object.newObject({name: 'nome', value: nome});
+  this.cronapi.object.setProperty(anotacao, '_id', String(mathRandomInt(1, 100000)));
+  this.cronapi.pouchdb.createDoc(banco, anotacao, null, async function(sender_item) {
       item = sender_item;
-
-    this.cronapi.screen.notify('error',
-    'Erro ao inserir anotação');
-  }.bind(this), function(sender_item) {
+    this.cronapi.screen.notify('error','Erro ao inserir anotação');
+  }.bind(this), async function(sender_item) {
       item = sender_item;
-
-    this.blockly.js.blockly.Anotacao.obter();
+    await this.blockly.js.blockly.Anotacao.obter();
   }.bind(this));
-
-  this.cronapi.screen.changeValueOfField(
-  'vars.nome',
-  null);
+  this.cronapi.screen.changeValueOfField('vars.nome', null);
 }
 
 /**
  * Descreva esta função...
  */
-window.blockly.js.blockly.Anotacao.inserirLote = function(lista) {
+window.blockly.js.blockly.Anotacao.inserirLote = async function(lista) {
  var item, anotacao, banco, nome, anotacoes, k, bd, j;
-
-  banco =
-  this.blockly.js.blockly.Anotacao.criarBancoLocal();
-
-  this.cronapi.util.callServerBlocklyAsynchronous('blockly.Anotacao:listar', function(sender_anotacoes) {
+  banco = await this.blockly.js.blockly.Anotacao.criarBancoLocal();
+  this.cronapi.util.callServerBlocklyAsynchronous('blockly.Anotacao:listar', async function(sender_anotacoes) {
       anotacoes = sender_anotacoes;
-
-    this.cronapi.pouchdb.createDocLote(banco, anotacoes, null, function(sender_item) {
+    this.cronapi.pouchdb.createDocLote(banco, anotacoes, null, async function(sender_item) {
         item = sender_item;
-
       console.log(item);
-    }.bind(this), function(sender_item) {
+    }.bind(this), async function(sender_item) {
         item = sender_item;
-
-      this.blockly.js.blockly.Anotacao.obter();
+      await this.blockly.js.blockly.Anotacao.obter();
     }.bind(this));
   }.bind(this));
 }
@@ -129,105 +86,58 @@ window.blockly.js.blockly.Anotacao.inserirLote = function(lista) {
 /**
  * Descreva esta função...
  */
-window.blockly.js.blockly.Anotacao.sincronizar = function() {
+window.blockly.js.blockly.Anotacao.sincronizar = async function() {
  var item, anotacao, banco, nome, anotacoes, k, bd, j, lista;
-
-  this.cronapi.pouchdb.getAllDoc(
-  this.blockly.js.blockly.Anotacao.criarBancoLocal(),
-  this.cronapi.json.createObjectFromString(
-  '{\"include_docs\": true}'), function(sender_item) {
+  this.cronapi.pouchdb.getAllDoc(await this.blockly.js.blockly.Anotacao.criarBancoLocal(), this.cronapi.json.createObjectFromString('{\"include_docs\": true}'), async function(sender_item) {
       item = sender_item;
-
-    this.cronapi.screen.notify('error',
-    'Erro ao sincronizar anotações');
-  }.bind(this), function(sender_item) {
+    this.cronapi.screen.notify('error','Erro ao sincronizar anotações');
+  }.bind(this), async function(sender_item) {
       item = sender_item;
-
-    this.blockly.js.blockly.Anotacao.tratarDados(
-    this.cronapi.json.getProperty(item,
-    'rows'));
-
-    this.cronapi.util.callServerBlocklyAsynchronous('blockly.Anotacao:gerenciar', function(sender_item) {
+    await this.blockly.js.blockly.Anotacao.tratarDados(this.cronapi.json.getProperty(item, 'rows'));
+    this.cronapi.util.callServerBlocklyAsynchronous('blockly.Anotacao:gerenciar', async function(sender_item) {
         item = sender_item;
-
-      if (
-      !
-      this.cronapi.logic.isNullOrEmpty(item)) {
-
-        this.blockly.js.blockly.Anotacao.deletarBancoLocal(
-        this.blockly.js.blockly.Anotacao.criarBancoLocal());
-
-        this.blockly.js.blockly.Anotacao.inserirLote(item);
+      if (!this.cronapi.logic.isNullOrEmpty(item)) {
+        await this.blockly.js.blockly.Anotacao.deletarBancoLocal(await this.blockly.js.blockly.Anotacao.criarBancoLocal());
+        await this.blockly.js.blockly.Anotacao.inserirLote(item);
       }
-    }.bind(this),
-    this.cronapi.screen.getScopeVariable(
-    'listaAnotacoes'));
+    }.bind(this), this.cronapi.screen.getScopeVariable('listaAnotacoes'));
   }.bind(this));
 }
 
 /**
  * Anotacao
  */
-window.blockly.js.blockly.Anotacao.obter = function() {
+window.blockly.js.blockly.Anotacao.obter = async function() {
  var item, anotacao, banco, nome, anotacoes, k, bd, j, lista;
-
-  banco =
-  this.blockly.js.blockly.Anotacao.criarBancoLocal();
-
-  this.cronapi.pouchdb.getAllDoc(banco,
-  this.cronapi.json.createObjectFromString(
-  '{\"include_docs\": true}'), function(sender_item) {
+  banco = await this.blockly.js.blockly.Anotacao.criarBancoLocal();
+  this.cronapi.pouchdb.getAllDoc(banco, this.cronapi.json.createObjectFromString('{\"include_docs\": true}'), async function(sender_item) {
       item = sender_item;
-
-    this.cronapi.screen.notify('error',
-    'Erro ao obter as anotações');
-  }.bind(this), function(sender_item) {
+    this.cronapi.screen.notify('error','Erro ao obter as anotações');
+  }.bind(this), async function(sender_item) {
       item = sender_item;
-
-    this.blockly.js.blockly.Anotacao.tratarDados(
-    this.cronapi.json.getProperty(item,
-    'rows'));
+    await this.blockly.js.blockly.Anotacao.tratarDados(this.cronapi.json.getProperty(item, 'rows'));
   }.bind(this));
 }
 
 /**
  * Descreva esta função...
  */
-window.blockly.js.blockly.Anotacao.deletarBancoLocal = function(bd) {
+window.blockly.js.blockly.Anotacao.deletarBancoLocal = async function(bd) {
  var item, anotacao, banco, nome, anotacoes, k, j, lista;
-
-  this.cronapi.pouchdb.getAllDoc(bd,
-  this.cronapi.json.createObjectFromString(
-  '{\"include_docs\": true}'), function(sender_item) {
+  this.cronapi.pouchdb.getAllDoc(bd, this.cronapi.json.createObjectFromString('{\"include_docs\": true}'), async function(sender_item) {
       item = sender_item;
-
     console.log(item);
-  }.bind(this), function(sender_item) {
+  }.bind(this), async function(sender_item) {
       item = sender_item;
-
-    var k_list =
-    this.cronapi.json.getProperty(item,
-    'rows');
+    var k_list = this.cronapi.json.getProperty(item, 'rows');
     for (var k_index in k_list) {
       k = k_list[k_index];
-
-      this.cronapi.pouchdb.deleteByIdDoc(bd,
-      this.cronapi.json.getProperty(k,
-      'id'),
-      this.cronapi.json.getProperty(
-      this.cronapi.json.getProperty(k,
-      'value'),
-      'rev'), null, function(sender_item) {
+      this.cronapi.pouchdb.deleteByIdDoc(bd, this.cronapi.json.getProperty(k, 'id'), this.cronapi.json.getProperty(this.cronapi.json.getProperty(k, 'value'), 'rev'), null, async function(sender_item) {
           item = sender_item;
-
-        this.cronapi.screen.notify('success',
-        'Erro ao deletar registro do banco');
-      }.bind(this), function(sender_item) {
+        this.cronapi.screen.notify('success','Erro ao deletar registro do banco');
+      }.bind(this), async function(sender_item) {
           item = sender_item;
-
-        this.cronapi.screen.changeValueOfField(
-        "vars.nome",
-        '');
+        this.cronapi.screen.changeValueOfField("vars.nome", '');
       }.bind(this));
     }
   }.bind(this));
@@ -236,24 +146,12 @@ window.blockly.js.blockly.Anotacao.deletarBancoLocal = function(bd) {
 /**
  * Descreva esta função...
  */
-window.blockly.js.blockly.Anotacao.tratarDados = function(lista) {
+window.blockly.js.blockly.Anotacao.tratarDados = async function(lista) {
  var item, anotacao, banco, nome, anotacoes, k, bd, j;
-
-  this.cronapi.screen.changeValueOfField(
-  'listaAnotacoes',
-  []);
-
+  this.cronapi.screen.changeValueOfField('listaAnotacoes', []);
   for (var j_index in lista) {
     j = lista[j_index];
-
-    /*# sourceMappingStart=DSc./!iB:me$4N3T,=rH */
-    this.cronapi.screen.getScopeVariable(
-    'listaAnotacoes').push(
-    this.cronapi.json.getProperty(j,
-    'doc'));
+    this.cronapi.screen.getScopeVariable('listaAnotacoes').push(this.cronapi.json.getProperty(j, 'doc'));
   }
-
-  this.cronapi.screen.changeValueOfField(
-  "vars.nome",
-  null);
+  this.cronapi.screen.changeValueOfField("vars.nome", null);
 }

@@ -6,14 +6,7 @@ window.blockly.js.blockly.Bpmn = window.blockly.js.blockly.Bpmn || {};
 /**
  * Bpmn
  */
-window.blockly.js.blockly.Bpmn.abrir = function() {
+window.blockly.js.blockly.Bpmn.abrir = async function() {
 
-
-  this.cronapi.screen.openUrl(
-  String(
-  this.cronapi.util.getBaseUrl()) + String(
-  '/app/welcome/default/'),
-  true,
-  0,
-  0);
+  this.cronapi.screen.openUrl(String(this.cronapi.util.getBaseUrl()) + String('/app/welcome/default/'), true, 0, 0);
 }
